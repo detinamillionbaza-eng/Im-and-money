@@ -1,0 +1,41 @@
+/* Existing deckanimation styles... */
+
+/* New styles for choice buttons in the event modal */
+.choice-btn {
+    background: linear-gradient(135deg, #ff9800, #ff5722);
+    /* Orange/Red mix */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.choice-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #ffad33, #ff7043);
+}
+
+.choice-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-extra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.hidden {
+    display: none !important;
+}

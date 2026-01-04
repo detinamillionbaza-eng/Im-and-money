@@ -1,0 +1,516 @@
+/* Стили для куратора, дополняющие auth.css */
+
+.curator-trigger-btn {
+    position: fixed;
+    width: 166.67px;
+    height: 66.67px;
+    top: 550.33px;
+    left: 250px;
+    z-index: 9000;
+    padding: 10px 20px;
+    background: #2d3748;
+    color: #fff;
+    border: 2px solid #4a5568;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+
+.curator-trigger-btn:hover {
+    background: #4a5568;
+}
+
+/* Кнопка "Начать игру" (видна всем, под кнопкой куратора) */
+.start-game-trigger-btn {
+    position: fixed;
+    width: 166.67px;
+    height: 66.67px;
+    top: 550.33px;
+    left: 700px;
+    z-index: 9000;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #48bb78, #38a169);
+    color: #fff;
+    border: 2px solid #38a169;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s;
+}
+
+.start-game-trigger-btn:hover {
+    background: linear-gradient(to right, #38a169, #2f855a);
+    transform: scale(1.05);
+}
+
+.start-game-trigger-btn.hidden {
+    display: none;
+}
+
+/* Когда игра запущена - кнопка становится красной */
+.start-game-trigger-btn.game-running {
+    background: linear-gradient(to right, #f56565, #c53030);
+    border-color: #c53030;
+}
+
+.start-game-trigger-btn.game-running:hover {
+    background: linear-gradient(to right, #c53030, #9b2c2c);
+}
+
+/* Кнопка неактивна для не-хоста */
+.start-game-trigger-btn.disabled,
+.start-game-trigger-btn:disabled {
+    background: linear-gradient(to right, #718096, #4a5568);
+    border-color: #4a5568;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.start-game-trigger-btn.disabled:hover,
+.start-game-trigger-btn:disabled:hover {
+    transform: none;
+}
+
+.curator-auth-content {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border: 1px solid #4a5568;
+}
+
+.curator-btn {
+    background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Панель куратора */
+.curator-panel-content {
+    max-width: 600px;
+    width: 90%;
+    background: #1a202c;
+    text-align: left;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.panel-close {
+    font-size: 24px;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.panel-status {
+    background: #2d3748;
+    padding: 10px;
+    border-radius: 6px;
+    color: #4fd1c5;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.panel-actions {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.start-game-btn {
+    background: linear-gradient(to right, #48bb78, #38a169);
+}
+
+.end-game-btn {
+    background: linear-gradient(to right, #f56565, #c53030);
+}
+
+.players-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Скролл присутствует */
+    background: #2d3748;
+    padding: 10px;
+    border-radius: 6px;
+    min-height: 200px;
+    /* Минимальная высота, чтобы скролл был виден если много игроков */
+}
+
+/* Скроллбар для вебкита */
+.players-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.players-list-container::-webkit-scrollbar-track {
+    background: #1a202c;
+}
+
+.players-list-container::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+.players-list-container::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+
+.players-list-container h3 {
+    margin-top: 0;
+    color: #cbd5e0;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 5px;
+}
+
+#curator-players-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#curator-players-list li {
+    padding: 8px;
+    border-bottom: 1px solid #4a5568;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e2e8f0;
+}
+
+.player-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #48bb78;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* === TOGGLE SWITCH SWITCHES === */
+
+.player-controls-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.permission-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.permission-label {
+    font-size: 10px;
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #718096;
+    /* Gray when OFF */
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #48bb78;
+    /* Green when ON */
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+.curator-btn {
+    background: linear-gradient(135deg, #4fd1c5 0%, #38b2ac 100%);
+}
+
+.secondary-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.secondary-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Панель куратора */
+.curator-panel-content {
+    max-width: 600px;
+    width: 90%;
+    background: #1a202c;
+    text-align: left;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #2d3748;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.panel-close {
+    font-size: 24px;
+    cursor: pointer;
+    color: #a0aec0;
+}
+
+.panel-status {
+    background: #2d3748;
+    padding: 10px;
+    border-radius: 6px;
+    color: #4fd1c5;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.panel-actions {
+    display: grid;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.start-game-btn {
+    background: linear-gradient(to right, #48bb78, #38a169);
+}
+
+.end-game-btn {
+    background: linear-gradient(to right, #f56565, #c53030);
+}
+
+.players-list-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    /* Скролл присутствует */
+    background: #2d3748;
+    padding: 10px;
+    border-radius: 6px;
+    min-height: 200px;
+    /* Минимальная высота, чтобы скролл был виден если много игроков */
+}
+
+/* Скроллбар для вебкита */
+.players-list-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.players-list-container::-webkit-scrollbar-track {
+    background: #1a202c;
+}
+
+.players-list-container::-webkit-scrollbar-thumb {
+    background: #4a5568;
+    border-radius: 4px;
+}
+
+.players-list-container::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+
+.players-list-container h3 {
+    margin-top: 0;
+    color: #cbd5e0;
+    border-bottom: 1px solid #4a5568;
+    padding-bottom: 5px;
+}
+
+#curator-players-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#curator-players-list li {
+    padding: 8px;
+    border-bottom: 1px solid #4a5568;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #e2e8f0;
+}
+
+.player-status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #48bb78;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+/* === TOGGLE SWITCH SWITCHES === */
+
+.player-controls-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.permission-toggle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.permission-label {
+    font-size: 10px;
+    color: #a0aec0;
+    text-transform: uppercase;
+}
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #718096;
+    /* Gray when OFF */
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #48bb78;
+    /* Green when ON */
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #48bb78;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(16px);
+    -ms-transform: translateX(16px);
+    transform: translateX(16px);
+}
+
+/* Curator Inspection Styles */
+.inspect-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0 8px;
+    margin-right: 5px;
+    transition: transform 0.2s;
+    filter: grayscale(1);
+    opacity: 0.7;
+    color: #cbd5e0;
+}
+
+.inspect-btn:hover {
+    transform: scale(1.2);
+    filter: none;
+    opacity: 1;
+    color: #e9d8fd;
+}
+
+/* Discrepancy Highlighting */
+.discrepancy-error {
+    border: 2px solid #fc8181 !important;
+    background-color: rgba(252, 129, 129, 0.1) !important;
+    box-shadow: 0 0 5px rgba(252, 129, 129, 0.5);
+}
+
+.server-hint {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 4px;
+    border-radius: 3px;
+    z-index: 10;
+}

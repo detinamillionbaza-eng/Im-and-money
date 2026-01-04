@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full HD Board Game</title>
+    <!-- Socket.IO клиент -->
+    <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- Подключаем CSS файлы -->
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="curator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="board.css">
+    <link rel="stylesheet" href="deckanimation.css">
+    <link rel="stylesheet" href="diceanimation.css">
+    <link rel="stylesheet" href="cellposition.css">
+    <link rel="stylesheet" href="diceanimation.css">
+    <link rel="stylesheet" href="playeranimation.css">
+    <link rel="stylesheet" href="coinanimation.css">
+    <link rel="stylesheet" href="choice_styles.css">
+    <link rel="stylesheet" href="finance_card.css">
+    <!-- Mobile Grid Layout (media queries inside - no effect on desktop) -->
+    <link rel="stylesheet" href="mobile.css?v=15" id="mobile-css">
+    <script src="mobile_adapter.js?v=15"></script>
+</head>
+<body>
+    
+
+    <!-- Модальное окно ВХОДА куратора -->
+    <div id="curator-auth-modal" class="auth-modal hidden">
+        <div class="auth-content curator-auth-content">
+            <h1 class="auth-title">Вход для Куратора</h1>
+            <div class="auth-error" id="curator-auth-error"></div>
+            
+            <!-- Имя куратора скрыто/фиксировано -->
+
+            
+            <div class="auth-input-group">
+                <label class="auth-label">Пароль куратора:</label>
+                <input type="password" id="curator-password" class="auth-input" placeholder="Введите пароль">
+            </div>
+            
+            <button id="curator-login-btn" class="auth-button curator-btn">Войти</button>
+            <button id="curator-cancel-btn" class="auth-button secondary-btn" style="margin-top: 10px;">Отмена</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно ПАНЕЛИ куратора -->
+    <div id="curator-panel-modal" class="auth-modal hidden">
+        <div class="auth-content curator-panel-content">
+            <div class="panel-header">
+                <h1 class="auth-title">Панель Управления</h1>
+                <div id="curator-panel-close" class="panel-close">×</div>
+            </div>
+            
+            <div class="panel-status" id="game-status-display">Статус: Ожидание</div>
+            
+            <div class="panel-actions">
+                <button id="curator-start-btn" class="auth-button curator-btn">🚀 Начать игру</button>
+                <button id="curator-end-btn" class="auth-button end-game-btn hidden">🏁 Завершить игру</button>
+            </div>
+
+            <div class="panel-settings" style="margin: 20px 0; padding: 15px; background: rgba(0,0,0,0.05); border-radius: 8px;">
+                <p style="font-weight: 500; margin-bottom: 10px;">Управление игрой у игроков:</p>
+                <div style="display: flex; gap: 10px;">
+                    <button id="curator-hide-controls-btn" class="auth-button" style="flex:1; background: #e53e3e;">🚫 Скрыть кнопку</button>
+                    <button id="curator-show-controls-btn" class="auth-button" style="flex:1; background: #38a169;">✅ Показать кнопку</button>
+                </div>
+            </div>
+            
+            <div class="players-list-container">
+                <h3>Игроки в сети:</h3>
+                <ul id="curator-players-list"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- STATIC GAME OVER MODAL (High Z-Index) -->
+    <div id="game-over-modal" class="auth-modal hidden" style="z-index: 10000;">
+        <div class="auth-content" style="max-width: 500px; text-align: center; background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); border: 2px solid #ffd700;">
+            <h1 style="color: #ffd700; font-size: 2.5rem; margin-bottom: 20px; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);">🎉 ПОЗДРАВЛЯЕМ! 🎉</h1>
+            <div id="winners-list" style="margin-bottom: 30px; max-height: 400px; overflow-y: auto;"></div>
+            <button id="btn-force-finish" class="auth-button" style="background: linear-gradient(to right, #e53e3e, #c53030); font-size: 1.2rem; padding: 15px;">🏁 ЗАВЕРШИТЬ ИГРУ</button>
+        </div>
+    </div>
+
+    <!-- Модальное окно Обучения (Слайдер) -->
+    <div id="tutorial-modal" class="auth-modal hidden" style="z-index: 999999 !important;">
+        <div class="auth-content tutorial-content" style="max-width: 800px; padding: 20px; background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%); width: 95%;">
+            <div class="tutorial-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+                <h2 class="auth-title" style="margin:0; font-size: 24px; color: #ffd700;">📚 Правила и Инструкции</h2>
+                <div id="tutorial-close" class="panel-close" style="cursor:pointer; font-size:28px; color:white;">×</div>
+            </div>
+
+            <!-- Контейнер Слайдера -->
+            <div class="tutorial-slider-wrapper" style="position:relative;">
+                
+                <div class="tutorial-slider-container" style="overflow:hidden; border-radius:15px; background: rgba(0,0,0,0.2);">
+                    <div class="tutorial-slides" style="display:flex; transition: transform 0.5s ease;">
+                        
+                        <!-- 1. Вход и Поддержка (Новый первый слайд) -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">👋</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px; position: relative;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Добро пожаловать в Игру!</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px; margin-bottom: 20px;">
+                                    Для входа требуется пароль.<br>
+                                    Его можно получить у кураторов, посетив пробный урок или став учеником школы <b>"Дети на миллион"</b>.<br>
+                                    Записаться на пробный урок можно через форму заявки или по контактам указанным на сайте.<br><br>
+                                    В случае технических проблем или пожеланий по самой игре обращайтесь в службу поддержки.
+                                </p>
+                                
+                                <!-- Кнопки -->
+                                <div style="display:flex; gap:10px; width:100%; justify-content:center; align-items: flex-start;">
+                                    
+                                    <!-- Кнопка Поддержки (с выпадающим меню) -->
+                                    <div style="position: relative; display: inline-block;">
+                                        <button id="tut-support-btn" class="auth-button" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; width:auto; font-size:14px; background: #38a169; padding: 10px 20px; border:none; cursor:pointer;">
+                                            💬 Служба Поддержки
+                                        </button>
+                                        
+                                        <!-- Выпадающее меню -->
+                                        <div id="tut-support-dropdown" class="support-dropdown hidden">
+                                            
+                                            <!-- Телефон -->
+                                            <a href="tel:+77766606622" class="contact-item">
+                                                <div class="contact-icon phone">
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                                </div>
+                                                <div class="contact-info">
+                                                    <span class="contact-label">Позвонить</span>
+                                                    <span class="contact-value">+7 776 660 66 22</span>
+                                                </div>
+                                            </a>
+
+                                            <!-- WhatsApp -->
+                                            <a href="https://wa.me/77766606622" target="_blank" class="contact-item">
+                                                <div class="contact-icon whatsapp">
+                                                    <!-- Simple WhatsApp-like Icon -->
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                                                </div>
+                                                <div class="contact-info">
+                                                    <span class="contact-label">WhatsApp</span>
+                                                    <span class="contact-value">+7 776 660 66 22</span>
+                                                </div>
+                                            </a>
+
+                                            <!-- Telegram -->
+                                            <a href="https://t.me/Berik_Zhanibekuly" target="_blank" class="contact-item">
+                                                <div class="contact-icon telegram">
+                                                    <!-- Simple Telegram-like Icon -->
+                                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white" stroke="none"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 11.944 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+                                                </div>
+                                                <div class="contact-info">
+                                                    <span class="contact-label">Telegram</span>
+                                                    <span class="contact-value">@Berik_Zhanibekuly</span>
+                                                </div>
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+
+                                    <!-- Кнопка Сайт Школы -->
+                                    <a href="https://samo-deti.com" target="_blank" class="auth-button" style="text-decoration:none; display:inline-flex; align-items:center; gap:8px; width:auto; font-size:14px; background: #3182ce; padding: 10px 20px;">
+                                        <span>🏫</span> Сайт Школы
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- 2. Цель Игры -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <!-- Сюда вставить картинку (Image 1) -->
+                                <div style="font-size:80px;">🏆</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 2 (Вставьте скриншот цели)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Цель Игры</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Ваша задача — стать финансово свободным!<br>
+                                    1. Купите свою <b>Мечту</b> (попав на клетку "Мечта").<br>
+                                    2. Увеличьте <b>Доход</b> от бизнесов так, чтобы он превышал Расходы.<br>
+                                    Побеждает тот, кто первым выполнит оба условия!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Важные Кнопки -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">🎛️</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 3 (Скриншот панели управления)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Управление</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Внизу экрана — ваш пульт управления.<br>
+                                    🎲 <b>Кубик:</b> Нажмите, чтобы сделать ход.<br>
+                                    📊 <b>Карточка:</b> Открывает ваши финансы.<br>
+                                    🚀 <b>Завершить ход:</b> Не забывайте нажимать после действий!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Клетка "Бизнес" -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">🏢</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 4 (Карточка бизнеса)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Покупка Бизнесов</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Попали на "Бизнес"? Отлично!<br>
+                                    Покупайте бизнесы (Цветы, IT-стартапы, Блоги), чтобы получать <b>Пассивный Доход</b>.<br>
+                                    Именно этот доход поможет вам выиграть.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Клетка "Деньги" (Попадание) -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">💰</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 5 (Клетка Деньги)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Деньги: Приземление</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Если вы <b>остановились</b> на клетке "Деньги":<br>
+                                    Вы автоматически получаете доход от всех своих бизнесов.<br>
+                                    Это ваш "День Зарплаты"! 🎉
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Клетка "Деньги" (Проход) -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">🏃💰</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 6 (Проход через деньги)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#e53e3e; margin-bottom:10px; font-size:20px;">Деньги: Проход мимо (ВАЖНО!)</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Игра <b>НЕ</b> напомнит вам, что вы прошли клетку "Деньги".<br>
+                                    Вы должны сами вспомнить и <b>НАЖАТЬ НА КЛЕТКУ</b>, чтобы забрать доход.<br>
+                                    Это тест на внимательность! Если вы забудете и сделаете следующий ход — деньги сгорят.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 7. Благотворительность -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">❤️</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 7 (Клетка Благотворительность)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Благотворительность</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Делайте добрые дела! Жертвуя на благотворительность, вы получаете "Добрые дела".<br>
+                                    Используйте их на клетке Благотворительности, чтобы получить ускорение (<b>Двойной Кубик</b> на 3 хода)!
+                                </p>
+                            </div>
+                        </div>
+
+                         <!-- 8. Развилка -->
+                         <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">Y</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 8 (Развилка и Монетка)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Развилка и Монетка</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    На поле есть развилки.<br>
+                                    Чтобы выбрать путь, нажмите кнопку 🪙 <b>Монетка</b>.<br>
+                                    Орел или Решка решат, куда вы повернете!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 9. Расходы и Проблемы -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">📉</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 9 (Карточка расходов)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Осторожно: Расходы!</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    Не только доходы ждут вас.<br>
+                                    Клетки "Расходы", "Большая Проблема" и "Разборки" могут ударить по кошельку.<br>
+                                    Всегда держите "подушку безопасности" из наличных!
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 10. Ваша Мечта -->
+                        <div class="tutorial-slide" style="min-width:100%; box-sizing:border-box;">
+                            <div class="slide-image-area" style="width:100%; height:300px; background:#4a5568; display:flex; align-items:center; justify-content:center; position:relative;">
+                                <div style="font-size:80px;">🏝️</div>
+                                <div style="position:absolute; bottom:10px; color:rgba(255,255,255,0.5); font-size:12px;">Слайд 10 (Клетка Мечта)</div>
+                            </div>
+                            <div class="slide-text-area" style="padding: 20px; text-align:center; min-height:150px;">
+                                <h3 style="color:#ffd700; margin-bottom:10px; font-size:20px;">Исполнение Мечты</h3>
+                                <p style="color:white; line-height:1.6; font-size:16px;">
+                                    У каждого есть своя Мечта.<br>
+                                    Попав на клетку "Мечта", вы можете купить её, если хватит денег.<br>
+                                    Вы также можете покупать <b>чужие мечты</b> как активы для заработка!
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Стрелки (Вынесены из container чтобы быть по краям фото) -->
+                <button id="tut-prev" style="position:absolute; left:-20px; top:150px; transform:translateY(-50%); background:rgba(255,255,255,0.1); color:white; border:2px solid white; width:40px; height:40px; border-radius:50%; cursor:pointer; font-weight:bold; z-index:10;">&#10094;</button>
+                <button id="tut-next" style="position:absolute; right:-20px; top:150px; transform:translateY(-50%); background:rgba(255,255,255,0.1); color:white; border:2px solid white; width:40px; height:40px; border-radius:50%; cursor:pointer; font-weight:bold; z-index:10;">&#10095;</button>
+            </div>
+
+            <!-- Точки -->
+            <div class="tutorial-dots" style="display:flex; justify-content:center; gap:8px; margin-bottom:10px; flex-wrap:wrap;">
+                <!-- Генерируются JS или вручную -->
+                <span class="tut-dot active" data-slide="0" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:1;"></span>
+                <span class="tut-dot" data-slide="1" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="2" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="3" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="4" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="5" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="6" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="7" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="8" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+                <span class="tut-dot" data-slide="9" style="width:10px; height:10px; border-radius:50%; background:white; cursor:pointer; opacity:0.5;"></span>
+            </div>
+
+            <div class="tutorial-footer" style="font-size:12px; color:rgba(255,255,255,0.6); margin-top:10px; text-align:center;">
+                Школа финансовой грамотности "Дети на миллион" © 2026
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно авторизации игрока -->
+    <div id="auth-modal" class="auth-modal">
+        <div class="auth-content">
+            <h1 class="auth-title">🐜 Я и деньги</h1>
+            <p class="auth-subtitle">Добро пожаловать в игру!</p>
+            
+            <div class="auth-error" id="auth-error"></div>
+            
+            <div class="auth-input-group">
+                <label class="auth-label" for="player-name">Ваше имя:</label>
+                <input 
+                    type="text" 
+                    id="player-name" 
+                    class="auth-input" 
+                    placeholder="Введите имя"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <div class="auth-input-group">
+                <label class="auth-label" for="player-password">Пароль игры:</label>
+                <input 
+                    type="password" 
+                    id="player-password" 
+                    class="auth-input" 
+                    placeholder="Введите пароль"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <button id="auth-btn" class="auth-button">Войти в игру</button>
+            
+            <div class="auth-info">
+                <span id="open-tutorial-link" style="color: #ffd700; text-decoration: underline; cursor: pointer; font-weight: bold;">📜 Правила и Инструкции</span>
+            </div>
+        </div>
+    </div>
+    <!-- Основной чат (ТОЛЬКО ПРОСМОТР) -->
+    <div id="chat-panel">
+        <div id="chat-collapse-btn" title="Свернуть">--</div>
+        <div class="chat-header">📜 История и Чат</div>
+        <div id="chat-container">
+            <div class="chat-messages" id="main-chat-messages">
+                <div class="chat-message message-system">Игра готова к началу!</div>
+            </div>
+            <!-- Строка ввода удалена, только просмотр -->
+        </div>
+    </div>
+
+    <!-- Панель ввода (ТОЛЬКО ВВОД) -->
+    <div id="players-chat-panel">
+        <div id="players-chat-collapse-btn" title="Свернуть">--</div>
+        <div class="chat-header">💬 Написать</div>
+        <div id="players-chat-container">
+            <div class="chat-input-area single-input-mode">
+                <input type="text" id="players-chat-input" placeholder="Введите сообщение..." maxlength="500">
+                <button id="players-chat-send">➤</button>
+            </div>
+        </div>
+    </div>
+                        <!-- МОДАЛКА ФИНАНСОВОЙ КАРТОЧКИ (НОВЫЙ ДИЗАЙН) -->
+            <div id="finance-modal" class="finance-modal">
+                <div class="finance-dashboard">
+                    <!-- Header -->
+                    <div class="fin-header">
+                        <div class="fin-player-info">
+                            <div class="fin-avatar">
+                                <img src="muravei/ant.png" alt="Avatar">
+                            </div>
+                            <div class="fin-player-details">
+                                <h2 id="fin-player-name">Игрок</h2>
+                                <div class="fin-player-sub">
+                                    <span class="fin-tag">ONLINE</span>
+                                    <span id="fin-player-role">CEO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fin-header-controls">
+                            <button id="btn-autofill-turn" class="fin-control-btn" title="Автоматически заполнить данные текущего хода">⚡ Автозаполнение</button>
+                            <button id="btn-show-history" class="fin-control-btn">📜 История</button>
+                            <button id="btn-toggle-actual" class="fin-control-btn">✅ Фактическая</button>
+                        </div>
+
+                        
+                    </div>
+
+                    <!-- === МОДАЛКА СЕРВЕРНЫХ ДАННЫХ (внутри основной) === -->
+                    <div id="server-data-modal" class="server-data-modal" style="display: none;">
+                        <div class="server-modal-content">
+                            <div class="server-modal-header">
+                                <h3>📡 Данные сервера</h3>
+                                <button id="server-modal-close" class="fin-close-btn" title="Закрыть">×</button>
+                            </div>
+                            
+                            <!-- Копилки -->
+                            <div class="server-wallets-grid">
+                                <div class="server-wallet">
+                                    <span class="sw-icon">❤️</span>
+                                    <span class="sw-label">Благотворительность</span>
+                                    <span class="sw-value" id="srv-wallet-charity">0</span>
+                                </div>
+                                <div class="server-wallet">
+                                    <span class="sw-icon">⭐</span>
+                                    <span class="sw-label">Мечта</span>
+                                    <span class="sw-value" id="srv-wallet-dream">0</span>
+                                </div>
+                                <div class="server-wallet">
+                                    <span class="sw-icon">🛡️</span>
+                                    <span class="sw-label">Сбережения</span>
+                                    <span class="sw-value" id="srv-wallet-savings">100</span>
+                                </div>
+                                <div class="server-wallet">
+                                    <span class="sw-icon">📈</span>
+                                    <span class="sw-label">Инвестиции</span>
+                                    <span class="sw-value" id="srv-wallet-invest">0</span>
+                                </div>
+                            </div>
+
+                            <!-- Доходы и Расходы -->
+                            <div class="server-flow-grid">
+                                <div class="server-flow income">
+                                    <div class="sf-header">💰 Доходы</div>
+                                    <div class="sf-list" id="srv-income-list">
+                                        <div class="sf-empty">Нет данных</div>
+                                    </div>
+                                    <div class="sf-total">Итого: <span id="srv-income-total">0</span> ₸</div>
+                                </div>
+                                <div class="server-flow expense">
+                                    <div class="sf-header">💸 Расходы</div>
+                                    <div class="sf-list" id="srv-expense-list">
+                                        <div class="sf-empty">Нет данных</div>
+                                    </div>
+                                    <div class="sf-total">Итого: <span id="srv-expense-total">0</span> ₸</div>
+                                </div>
+                            </div>
+
+                            <!-- Баланс -->
+                            <div class="srv-balance-row" style="background: linear-gradient(135deg, #27ae60 0%, #229954 100%); color: white; font-weight: bold; padding: 12px; border-radius: 8px; margin-top: 10px; text-align: center;">
+                                📊 Баланс сервера: <span id="srv-total-balance">100</span> ₸
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Grid -->
+                    <div class="fin-body">
+                        <!-- Left: Dream & Target -->
+                        <div class="fin-section-dream">
+                            <h3 class="fin-section-subtitle">Моя Цель</h3>
+                            
+                            <div class="fin-dream-card">
+                                <img src="cell-icon/computer.png" class="fin-dream-bg" id="fin-dream-img">
+                                <div class="fin-dream-overlay">
+                                    <select id="fin-dream-select" class="fin-dream-select">
+                                        <option value="" disabled selected>-- Выберите Мечту --</option>
+                                        <option value="computer" data-price="600">Компьютер (600 ₸)</option>
+                                        <option value="bicycle" data-price="600">Велосипед (600 ₸)</option>
+                                        <option value="smartphone" data-price="500">Смартфон (500 ₸)</option>
+                                        <option value="scooter" data-price="600">Самокат (600 ₸)</option>
+                                        <option value="disney" data-price="1000">Диснейленд (1000 ₸)</option>
+                                    </select>
+                                    <div class="fin-dream-price" id="fin-dream-price">... ₸</div>
+                                    <div id="fin-dream-status" class="fin-dream-status" style="display: none;">✅ ВЫБРАНО</div>
+                                    
+                                    <!-- Custom Confirm Modal inside the card -->
+                                    <div id="dream-confirm-modal" class="dream-confirm-modal" style="display: none;">
+                                        <div class="dream-confirm-content">
+                                            <h4>Подтвердите выбор</h4>
+                                            <p>Вы точно хотите выбрать <span id="dream-confirm-name" style="color:var(--fin-accent-green); font-weight:bold;">...</span>?</p>
+                                            <div class="dream-confirm-buttons">
+                                                <button id="dream-confirm-yes" class="fin-btn-confirm">Да, беру!</button>
+                                                <button id="dream-confirm-no" class="fin-btn-cancel">Отмена</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fin-dream-progress-container">
+                                <svg viewBox="0 0 36 36" class="circular-chart">
+                                    <path class="circle-bg"
+                                      d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <path class="circle" id="fin-dream-circle"
+                                      stroke-dasharray="0, 100"
+                                      d="M18 2.0845
+                                        a 15.9155 15.9155 0 0 1 0 31.831
+                                        a 15.9155 15.9155 0 0 1 0 -31.831"
+                                    />
+                                    <text x="18" y="20.35" class="percentage" id="fin-dream-percent">0%</text>
+                                </svg>
+                            </div>
+                        </div>
+
+                        <!-- Center: Wallets & Flow -->
+                        <div class="fin-section-center">
+                            <!-- Wallets Grid -->
+                            <h3 class="fin-section-subtitle">Мои Кошельки</h3>
+                            <div class="fin-wallets-grid">
+                                
+                                <!-- Wallet 1: Charity -->
+                                <div class="fin-wallet-card wallet-charity">
+                                    <div class="fin-wallet-header">
+                                        <span class="fin-wallet-icon">❤️</span> Благотворительность
+                                    </div>
+                                    <div class="fin-wallet-input-container">
+                                        <input type="number" class="fin-wallet-input" value="0" id="wallet-charity-input">
+                                        <span class="fin-currency">₸</span>
+                                    </div>
+                                    <div class="fin-progress-bar">
+                                        <div class="fin-progress-fill" style="width: 10%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Wallet 2: Dream -->
+                                <div class="fin-wallet-card wallet-dream">
+                                    <div class="fin-wallet-header">
+                                        <span class="fin-wallet-icon">⭐</span> Мечта
+                                    </div>
+                                    <div class="fin-wallet-input-container">
+                                        <input type="number" class="fin-wallet-input" value="0" id="wallet-dream-input">
+                                        <span class="fin-currency">₸</span>
+                                    </div>
+                                    <div class="fin-progress-bar">
+                                        <div class="fin-progress-fill" style="width: 25%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Wallet 3: Savings/Reserve -->
+                                <div class="fin-wallet-card wallet-savings">
+                                    <div class="fin-wallet-header">
+                                        <span class="fin-wallet-icon">🛡️</span> Сбережения
+                                    </div>
+                                    <div class="fin-wallet-input-container">
+                                        <input type="number" class="fin-wallet-input" value="100" id="wallet-savings-input">
+                                        <span class="fin-currency">₸</span>
+                                    </div>
+                                    <div class="fin-progress-bar">
+                                        <div class="fin-progress-fill" style="width: 50%"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Wallet 4: Investments -->
+                                <div class="fin-wallet-card wallet-invest">
+                                    <div class="fin-wallet-header">
+                                        <span class="fin-wallet-icon">📈</span> Инвестиции
+                                    </div>
+                                    <div class="fin-wallet-input-container">
+                                        <input type="number" class="fin-wallet-input" value="0" id="wallet-invest-input">
+                                        <span class="fin-currency">₸</span>
+                                    </div>
+                                    <div class="fin-progress-bar">
+                                        <div class="fin-progress-fill" style="width: 5%"></div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Cash Flow -->
+                            <h3 class="fin-section-subtitle">Денежный Поток (Месяц)</h3>
+                            <div class="fin-cashflow-container">
+                                
+                                <div class="fin-flow-column">
+                                    <div class="fin-flow-header">
+                                        <span class="fin-flow-title text-green">ДОХОДЫ</span>
+                                        <span class="fin-flow-total text-green" id="fin-income-total">+0 ₸</span>
+                                    </div>
+                                    <div class="fin-flow-list" id="fin-income-list">
+                                        <!-- Записи добавляются динамически -->
+                                    </div>
+                                    <button class="fin-add-btn" id="btn-add-income">+ Добавить доход</button>
+                                </div>
+
+                                <div class="fin-flow-column">
+                                    <div class="fin-flow-header">
+                                        <span class="fin-flow-title text-red">РАСХОДЫ</span>
+                                        <span class="fin-flow-total text-red" id="fin-expense-total">-0 ₸</span>
+                                    </div>
+                                    <div class="fin-flow-list" id="fin-expense-list">
+                                        <!-- Записи добавляются динамически -->
+                                    </div>
+                                    <button class="fin-add-btn" id="btn-add-expense">+ Добавить расход</button>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Right: Assets & History -->
+                        <div class="fin-section-right">
+                            
+                            <!-- Assets -->
+                            <div>
+                                <h3 class="fin-section-subtitle">Активы / Бизнесы</h3>
+                                <div class="fin-assets-list" id="fin-assets-list">
+                                    <div class="fin-asset-item">
+                                        <div class="fin-asset-info">
+                                            <h4>Нет активов</h4>
+                                            <span>Купите бизнес!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skills -->
+                            <div>
+                                <h3 class="fin-section-subtitle">Навыки</h3>
+                                <div class="fin-assets-list" id="fin-skills-list">
+                                    <div class="fin-asset-item" style="border-color: var(--fin-accent-purple)">
+                                        <div class="fin-asset-icon">🎓</div>
+                                        <div class="fin-asset-info">
+                                            <h4>Нет навыков</h4>
+                                            <span>Изучайте!</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Small Graph -->
+                            <div style="flex: 1; display: flex; flex-direction: column;">
+                                <h3 class="fin-section-subtitle">Рост Капитала</h3>
+                                <div class="fin-graph-placeholder">
+                                    <div class="simple-chart">
+                                        <div class="chart-bar" style="height: 20px;" title="100 ₸"></div>
+                                    </div>
+                                    <span style="font-size: 10px;">Начало игры</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="fin-footer">
+                        <button id="btn-confirm-card" class="fin-confirm-btn">✅ Подтвердить карточку</button>
+                        <div class="fin-total-balance">Общий Баланс: 100 ₸</div>
+                    </div>
+                </div>
+            </div>
+            <!-- МОДАЛКА ИСТОРИИ (History Modal) -->
+            <div id="history-modal" class="finance-modal" style="z-index: 10002;">
+                <div class="finance-dashboard" style="height: 80%; max-width: 800px;">
+                    <div class="fin-header">
+                        <h2 style="font-size: 20px;">📜 История Игры</h2>
+                        <button id="history-close" class="fin-close-btn">×</button>
+                    </div>
+                    <div class="fin-body" style="display: block; overflow-y: auto; padding: 20px;">
+                        <table class="fin-history-table">
+                            <thead>
+                                <tr>
+                                    <th>№</th>
+                                    <th>Кубик</th>
+                                    <th>Клетка</th>
+                                    <th>Карточка</th>
+                                    <th>Результат</th>
+                                </tr>
+                            </thead>
+                            <tbody id="history-list-body">
+                                <!-- История заполняется автоматически -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    <!-- Контейнер игры -->
+    <div class="game-container" id="gameContainer">
+        <div id="fullhd">
+            <!-- Панель управления (единый стиль) -->
+            <div class="control-panel">
+                <!-- Кнопка финансовой карточки - только иконка -->
+                <button id="financecard1" class="control-btn finance-card-trigger finance-icon-only" title="Моя финансовая карточка (F)">
+                    <span class="btn-icon">📊</span>
+                </button>
+
+                <!-- Кнопка куратора -->
+                <button id="curator-btn-trigger" class="control-btn" title="Панель куратора">
+                    <span class="btn-icon">👑</span>
+                    <span class="btn-label">Куратор</span>
+                </button>
+
+                <!-- Кнопка начать/завершить игру -->
+                <button id="start-game-btn" class="control-btn" title="Начать/Завершить игру">
+                    <span class="btn-icon">🚀</span>
+                    <span class="btn-label">Ожидание</span>
+                </button>
+
+                <!-- Кнопка обучения (НОВАЯ) -->
+                <button id="tutorial-btn" class="control-btn" title="Обучение и Правила">
+                    <span class="btn-icon">📚</span>
+                    <span class="btn-label">Инструкция</span>
+                </button>
+
+                <!-- Панель масштаба (без иконок, как кнопки) -->
+                <div class="scale-controls">
+                    <button onclick="scaleGame(0.5)">50%</button>
+                    <button onclick="scaleGame(0.7)">70%</button>
+                    <button onclick="scaleGame(0.8)">80%</button>
+                    <button onclick="scaleGame(1)">100%</button>
+                </div>
+            </div>
+
+            <!-- COIN FLIP UI -->
+            <div class="coin-container">
+                <div class="coin">
+                    <div class="coin-face heads">ОРЕЛ</div>
+                    <div class="coin-face tails">РЕШКА</div>
+                </div>
+                <div class="coin-result-label">РЕЗУЛЬТАТ</div>
+            </div>
+
+            <div class="coin-button-container">
+                <button class="coin-btn" title="Подбросить монетку">🪙</button>
+            </div>
+            <!-- Игровое поле -->
+            <div class="board">
+                <div class="cell cell-55">
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>
+                    <div class="cell-text">Шанс</div>
+                </div>
+                <div class="cell cell-54">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>
+                </div>
+                <div class="cell cell-53">
+                    <div class="cell-text">Детский</div>
+                    <div class="cell-textdown">бизнес</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/business.png');"></div>
+                </div>
+                <div class="cell cell-start">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-1">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>
+                </div>
+                <div class="cell cell-2">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-3">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-4">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">600С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/computer.png');"></div>                
+                </div>
+                <div class="cell cell-5">
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>
+                    <div class="cell-text">Расходы</div>                
+                </div>
+                <div class="cell cell-6">
+                    <div class="cell-text">Детский</div>
+                    <div class="cell-textdown">бизнес</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/business.png');"></div>                
+                </div>
+                <div class="cell cell-7">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-8">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-fork1">
+                    <div class="cell-text">Развилка</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/fork.png');"></div>                
+                </div>
+                <div class="cell cell-9">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-10">
+                    <div class="cell-text">Детский</div> 
+                    <div class="cell-textdown">бизнес</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/business.png');"></div>               
+                </div>
+                <div class="cell cell-11">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-12">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-13">
+                    <div class="cell-text">Директор</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/director.png');"></div>                
+                </div>
+                <div class="cell cell-14">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-15">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-16">
+                <div class="cell-text">Шанс</div>
+                <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-17">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-18">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">600С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/bicycle.png');"></div>                 
+                </div>
+                <div class="cell cell-fork">
+                    <div class="cell-text">Развилка</div> 
+                    <div class="cell-icon" style="background-image: url('cell-icon/fork.png');"></div>               
+                </div>
+                <div class="cell cell-19">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-20">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-21">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-22">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-23">
+                    <div class="cell-text">Детский</div>
+                    <div class="cell-textdown">бизнес</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/business.png');"></div>                 
+                </div>
+                <div class="cell cell-24">
+                    <div class="cell-text">Драка</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/fight.png');"></div>                
+                </div>
+                <div class="cell cell-25">
+                    <div class="cell-text">Хулиганы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/gangsters.png');"></div>                
+                </div>
+                <div class="cell cell-26">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-27">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-28">
+                    <div class="cell-text">Большие</div>
+                    <div class="cell-textdown">проблемы</div> 
+                    <div class="cell-icon" style="background-image: url('cell-icon/bigproblem.png');"></div>                
+                </div>
+                <div class="cell cell-29">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">500С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/smartphone.png');"></div>                 
+                </div>
+                <div class="cell cell-30">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-31">
+                    <div class="cell-text">Драка</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/fight.png');"></div>                
+                </div>
+                <div class="cell cell-32">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-33">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>   
+                <div class="cell cell-34">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">600С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/computer.png');"></div>                 
+                </div>
+                <div class="cell cell-35">
+                    <div class="cell-text">Хулиганы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/gangsters.png');"></div>                
+                </div>
+                <div class="cell cell-36">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>
+                </div>
+                <div class="cell cell-37">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-38">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-39">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-40">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+                <div class="cell cell-41">
+                    <div class="cell-text">Благотво-</div>
+                    <div class="cell-textdown">рительность</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/charity.png');"></div>                 
+                </div>
+                <div class="cell cell-42">
+                    <div class="cell-text">Детский</div>
+                    <div class="cell-textdown">бизнес</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/business.png');"></div>                 
+                </div>
+                <div class="cell cell-43">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div> 
+                <div class="cell cell-44">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-45">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">600С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/scooter.png');"></div>                 
+                </div>
+                <div class="cell cell-46">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-47">
+                    <div class="cell-text">Расходы</div> 
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>               
+                </div>
+                <div class="cell cell-48">
+                    <div class="cell-text">Шанс</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/chance.png');"></div>                
+                </div>
+                <div class="cell cell-49">
+                    <div class="cell-text">Новости</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/news.png');"></div>                
+                </div>
+                <div class="cell cell-50">
+                    <div class="cell-text">Мечта</div>
+                    <div class="cell-textdown">1000С</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/disney.png');"></div>                 
+                </div>
+                <div class="cell cell-51">
+                    <div class="cell-text">Деньги</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/money.png');"></div>                
+                </div>
+                <div class="cell cell-52">
+                    <div class="cell-text">Расходы</div>
+                    <div class="cell-icon" style="background-image: url('cell-icon/expenses.png');"></div>                
+                </div>
+            </div>
+            <!-- Текст карточек -->
+            <div class="sidebar">
+                <div class="sidebar-inner">
+                  <!-- контент -->
+                </div>
+            </div>
+
+
+
+
+            <!-- КОЛОДЫ И КАРТА -->
+            <!-- МОДАЛКА ИСТОРИИ (History Modal) -->
+
+
+            <div id="app" class="card-container">
+            <!-- 4 колоды -->
+            <div class="deck" data-deck="1" id="deck1">
+                <img src="muravei/deckrashody.png" alt="Deck 1" />
+            </div>
+            <div class="deck" data-deck="2" id="deck2">
+                <img src="muravei/deckbusiness.png" alt="Deck 2" />
+            </div>
+            <div class="deck" data-deck="3" id="deck3">
+                <img src="muravei/decknews.png" alt="Deck 3" />
+            </div>
+            <div class="deck" data-deck="4" id="deck4">
+                <img src="muravei/deckchance.png" alt="Deck 4" />
+            </div>
+
+            <div class="ant" data-ant="1" id="ant1">
+                <img src="muravei/antrashody.png" alt="antrashody.png" />
+            </div>
+            <div class="ant" data-ant="2" id="ant2">
+                <img src="muravei/antkidsbusines.png" alt="antkidsbusines.png" />
+            </div>
+            <div class="ant" data-ant="3" id="ant3">
+                <img src="muravei/antnwes.png" alt="antnwes.png" />
+            </div>
+            <div class="ant" data-ant="4" id="ant4">
+                <img src="muravei/antchance.png" alt="antchance.png" />
+            </div>
+
+
+            <!-- Летающая карта (для активного игрока) -->
+            <div id="card" class="card"> 
+                <img id="cardImage" src="muravei/rubashka.png" class="card-back" alt="Card Back" />
+                
+                <!-- Динамический контент карты -->
+                <div id="card-dynamic-content" class="card-content" style="opacity: 0; transition: opacity 0.5s;">
+                    <h2 id="card-title">ЗАДАНИЕ</h2>
+                    <p id="card-text">Текст задания...</p>
+                    <div id="card-extra-info" class="card-extra"></div>
+                    <button class="closeBtn" id="card-close-btn">Закрыть</button>
+                </div>
+            </div>
+            
+            <!-- ОТДЕЛЬНОЕ ОКНО ДЛЯ НАБЛЮДАТЕЛЕЙ (не использует анимацию) -->
+            <div id="observer-card-modal" style="
+                display: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 320px;
+                min-height: 200px;
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                border: 3px solid #ffd700;
+                border-radius: 15px;
+                padding: 20px;
+                z-index: 9999;
+                box-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+            ">
+                <h2 id="observer-card-title" style="color: #ffd700; text-align: center; margin: 0 0 15px 0; font-size: 20px;">КАРТОЧКА</h2>
+                <p id="observer-card-text" style="color: #fff; text-align: center; font-size: 16px; line-height: 1.5;"></p>
+                <div id="observer-card-extra" style="color: #aaa; text-align: center; font-size: 14px; margin-top: 10px;"></div>
+                <div id="observer-card-player" style="color: #ffd700; text-align: center; font-size: 14px; margin-top: 15px; font-style: italic;"></div>
+            </div>
+            
+
+
+    
+
+
+            <!-- Dice Cube -->
+    <div class="dice-cube-container">
+        <div class="dice">
+            <div class="dice-face front" data-value="1"></div>
+            <div class="dice-face back" data-value="6"></div>
+            <div class="dice-face right" data-value="2"></div>
+            <div class="dice-face left" data-value="5"></div>
+            <div class="dice-face top" data-value="3"></div>
+            <div class="dice-face bottom" data-value="4"></div>
+        </div>
+    </div>
+
+    <!-- Dice Button -->
+    <div class="dice-button-container">
+        <button class="roll-btn">
+            <img src="cell-icon/chance.png" alt="Roll">
+        </button>
+    </div>
+
+        </div>   
+          
+    </div>
+
+    <!-- Dice Result Modal -->
+    <div id="diceResultModal" class="dice-modal">
+        <div class="dice-modal-content">
+            <h2 id="diceResultText"></h2>
+            <button id="diceResultOk" class="dice-modal-btn">OK</button>
+        </div>
+    </div>
+
+    <!-- Подключаем JavaScript файлы (Сначала анимации и UI, потом логика игры) -->
+    <script src="board.js"></script>
+    <script src="deckanimation.js"></script>
+    <script src="coinanimation.js"></script>
+    <script src="diceanimation.js"></script>
+    <script src="playeranimation.js"></script>
+    
+    <!-- Основной клиент игры загружается последним -->
+    <script src="gameclient.js"></script>
+    <script src="tutorial.js"></script>
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
