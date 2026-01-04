@@ -1,0 +1,1108 @@
+{
+    "cards": [
+        {
+            "nr": 1,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Школьный КВН",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ШКОЛЬНЫЙ КВН",
+            "descriptionSelf": "Вы участвовали в школьном КВНе, ваша команда заняла 2 место. Вам досталось 10₴ призовых денег.",
+            "descriptionOthers": "{Player} участвовал в школьном КВНе, его команда заняла 2 место. Ему досталось 10₴ призовых денег.",
+            "playerMessages": {
+                "success": "Ваша команда заняла 2 место в школьном КВН! Вы получили {Amount}₴ призовых.",
+                "decline": "Вы решили отказаться от призовых денег за 2 место в КВН.",
+                "missing": "Вы заняли 2 место в КВН, но не смогли получить 10₴ призовых."
+            },
+            "otherPlayerMessages": {
+                "success": "Команда игрока {Player} заняла 2 место в КВН, и он получил {Amount}₴.",
+                "decline": "Игрок {Player} отказался от приза за 2 место в школьном КВН.",
+                "missing": "Игрок {Player} занял 2 место в КВН, но не получил заслуженный приз."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 2,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Школьный КВН",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ШКОЛЬНЫЙ КВН",
+            "descriptionSelf": "Вы участвовали в школьном КВНе, ваша команда победила. Вам досталось 20₴ призовых денег.",
+            "descriptionOthers": "{Player} участвовал в школьном КВНе, его команда победила. Ему досталось 20₴ призовых денег.",
+            "playerMessages": {
+                "success": "Поздравляем! Ваша команда победила в школьном КВН! Вы заработали {Amount}₴ призовых.",
+                "decline": "Вы решили отказаться от призовых денег за победу в КВН.",
+                "missing": "Вы победили в КВН, но не смогли получить заслуженные 20₴ призовых."
+            },
+            "otherPlayerMessages": {
+                "success": "Команда игрока {Player} победила в КВН! Игрок получил {Amount}₴ призовых.",
+                "decline": "Игрок {Player} отказался от денежного приза за победу в школьном КВН.",
+                "missing": "Игрок {Player} победил в КВН, но по какой-то причине не получил свой приз."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 3,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 100,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Спорт",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "СПОРТ",
+            "descriptionSelf": "Мэрия провела спортивные соревнования. Вы участвовали и заняли 1 место. Приз 100₴.",
+            "descriptionOthers": "Мэрия провела спортивные соревнования. {Player} участвовал и занял 1 место. Приз 100₴.",
+            "playerMessages": {
+                "success": "Великолепно! Вы заняли 1 место в спортивных соревнованиях мэрии и получили {Amount}₴!",
+                "decline": "Вы решили отказаться от денежного приза за 1 место в соревнованиях.",
+                "missing": "Вы заняли 1 место в соревнованиях, но не смогли получить приз в 100₴."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} блестяще выступил на соревнованиях и занял 1 место, получив {Amount}₴.",
+                "decline": "Игрок {Player} занял 1 место в спорте, но отказался от денежного вознаграждения.",
+                "missing": "Игрок {Player} выиграл соревнования мэрии, но остался без денежного приза."
+            },
+            "amountChange": 100
+        },
+        {
+            "nr": 4,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 80,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Спорт",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "СПОРТ",
+            "descriptionSelf": "Мэрия провела спортивные соревнования. Вы участвовали и заняли 2 место. Приз 80₴.",
+            "descriptionOthers": "Мэрия провела спортивные соревнования. {Player} участвовал и занял 2 место. Приз 80₴.",
+            "playerMessages": {
+                "success": "Отличный результат! Вы заняли 2 место в спортивных соревнованиях и получили {Amount}₴.",
+                "decline": "Вы решили не брать денежный приз за 2 место в спортивных соревнованиях.",
+                "missing": "Вы заняли 2 место в соревнованиях мэрии, но не получили приз 80₴."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} занял почетное 2 место в спортивных соревнованиях и получил {Amount}₴.",
+                "decline": "Игрок {Player} занял 2 место в соревнованиях, но решил отказаться от приза.",
+                "missing": "Игрок {Player} стал серебряным призером соревнований, но не получил выплату."
+            },
+            "amountChange": 80
+        },
+        {
+            "nr": 5,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 60,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Спорт",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "СПОРТ",
+            "descriptionSelf": "Мэрия провела спортивные соревнования. Вы участвовали и заняли 3 место. Приз 60₴.",
+            "descriptionOthers": "Мэрия провела спортивные соревнования. {Player} участвовал и занял 3 место. Приз 60₴.",
+            "playerMessages": {
+                "success": "Хорошая работа! Вы заняли 3 место в спортивных соревнованиях и получили {Amount}₴.",
+                "decline": "Вы отказались от денежного вознаграждения за 3 место в соревнованиях.",
+                "missing": "Вы заняли 3 место в соревнованиях мэрии, но не смогли забрать приз 60₴."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} занял 3 место в спортивных соревнованиях и получил {Amount}₴.",
+                "decline": "Игрок {Player} занял 3 место в спорте, но отказался от призовых денег.",
+                "missing": "Игрок {Player} вошел в тройку лидеров соревнований, но остался без приза."
+            },
+            "amountChange": 60
+        },
+        {
+            "nr": 6,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 20,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Копилка",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КОПИЛКА",
+            "descriptionSelf": "Тебе нужна копилка для сохранения денег, чтобы поехать в лагерь. Купи копилку за 20₴.",
+            "descriptionOthers": "{Player} решил купить копилку для сохранения денег, чтобы поехать в лагерь. Он потратил 20₴.",
+            "playerMessages": {
+                "success": "Вы купили копилку за {Amount}₴. Теперь в нее можно откладывать деньги на лагерь!",
+                "decline": "Вам предложили купить копилку для поездки в лагерь за {Amount}₴, но вы отказались.",
+                "missing": "Вы решили купить копилку за 20₴, чтобы копить на лагерь. К сожалению, у вас не хватило денег на покупку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} купил копилку за {Amount}₴, чтобы начать копить на поездку в лагерь.",
+                "decline": "Игрок {Player} решил не покупать копилку для сбережений за {Amount}₴.",
+                "missing": "Игроку {Player} понадобилась копилка за 20₴ для поездки в лагерь, но у него не хватило средств."
+            },
+            "amountChange": -20
+        },
+        {
+            "nr": 7,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Помощь другу (Транспорт)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ ДРУГУ",
+            "descriptionSelf": "Твой одноклассник заболел и не смог попасть на соревнования. Ты организовал для друга транспорт, чтобы он смог посмотреть их, друг был очень рад. И у тебя есть возможность играть двумя косточками два раза.",
+            "descriptionOthers": "{Player} может организовать транспорт для друга, чтобы он смог посмотреть соревнования. У {Player} есть возможность играть двумя косточками два раза.",
+            "playerMessages": {
+                "success": "Вы организовали транспорт для заболевшего друга! Теперь вы можете ходить двумя кубиками 2 раза.",
+                "decline": "Вы решили не помогать другу с организацией транспорта на соревнования.",
+                "missing": "Вы хотели помочь другу с транспортом, но не смогли выполнить необходимые условия."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог другу попасть на соревнования и получил бонус к движению.",
+                "decline": "Игрок {Player} отказался помогать другу с транспортом для поездки на соревнования.",
+                "missing": "Игрок {Player} не смог организовать помощь другу, несмотря на благие намерения."
+            },
+            "amountChange": 0,
+            "buff": {
+                "type": "double_dice",
+                "duration": 2
+            }
+        },
+        {
+            "nr": 8,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Помощь другу (Домашка)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ ДРУГУ",
+            "descriptionSelf": "Друг катался на самокате и сломал ногу, ты каждый день помогал делать домашнее задание. Твой друг был очень благодарен тебе.",
+            "descriptionOthers": "{Player} может помочь другу, который сломал ногу, делать домашнее задание. Друг был очень благодарен ему.",
+            "playerMessages": {
+                "success": "Вы каждый день помогали другу со сломанной ногой делать уроки. Он очень вам благодарен!",
+                "decline": "Вы решили не тратить свое время на помощь другу с домашним заданием.",
+                "missing": "Вы хотели помочь другу с уроками, пока он восстанавливается, но не смогли этого сделать."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил заботу и помогал другу со сломанной ногой делать уроки.",
+                "decline": "Игрок {Player} отказался помогать другу с домашним заданием, несмотря на его травму.",
+                "missing": "Игрок {Player} не смог оказать помощь другу в учебе."
+            },
+            "amountChange": 0
+        },
+        {
+            "nr": 9,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Помощь другу (Снаряжение)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ ДРУГУ",
+            "descriptionSelf": "В лагере твой друг потерял свои снаряжения для плавания и вы с друзьями собрав деньги, купили ему новые. Твой друг был очень благодарен. У тебя есть возможность играть двумя косточками два раза.",
+            "descriptionOthers": "{Player} может с друзьями купить новое снаряжение для плавания другу. У {Player} есть возможность играть двумя косточками два раза.",
+            "playerMessages": {
+                "success": "Вы с друзьями купили новое снаряжение для плавания взамен утерянного! Получен бонус: 2 кубика на 2 хода.",
+                "decline": "Вы решили не участвовать в сборе денег на новое снаряжение для друга.",
+                "missing": "Вы хотели помочь другу купить снаряжение для плавания, но у вас не хватило средств на взнос."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог другу со снаряжением для плавания и зарядился энергией для рывка.",
+                "decline": "Игрок {Player} отказался скидываться на новое снаряжение для друга.",
+                "missing": "Игрок {Player} не смог помочь другу со снаряжением из-за нехватки денег."
+            },
+            "amountChange": 0,
+            "buff": {
+                "type": "double_dice",
+                "duration": 2
+            }
+        },
+        {
+            "nr": 10,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Субботник",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ",
+            "descriptionSelf": "Ты участвовал в благотворительной акции “За чистый город”. Помог в общегородском субботнике и собрал мешок мусора.",
+            "descriptionOthers": "{Player} может участвовать в благотворительной акции “За чистый город” и собрать мешок мусора.",
+            "playerMessages": {
+                "success": "Вы отлично потрудились на городском субботнике! Город стал чуточку чище благодаря вам.",
+                "decline": "Вы решили пропустить общегородской субботник и заняться своими делами.",
+                "missing": "Вы собирались пойти на субботник “За чистый город”, но обстоятельства помешали вам."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} поучаствовал в акции “За чистый город” и собрал целый мешок мусора.",
+                "decline": "Игрок {Player} проигнорировал призыв выйти на субботник и остался дома.",
+                "missing": "Игрок {Player} не смог принять участие в городском субботнике."
+            },
+            "amountChange": 0
+        },
+        {
+            "nr": 11,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 600,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Запуск рекламы",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЗАПУСК РЕКЛАМЫ",
+            "descriptionSelf": "Ты помог своему дяде-бизнесмену запустить рекламу в Фэйсбуке, продажи увеличились на 300₴, и твой дядя купил тебе тренинг по финансовой грамотности. После обучения ты накопил 600₴.",
+            "descriptionOthers": "{Player} помог дяде запустить рекламу. После обучения он накопил 600₴.",
+            "playerMessages": {
+                "success": "Вы помогли дяде с рекламой и прошли тренинг! После обучения ваш бюджет пополнился на {Amount}₴.",
+                "decline": "Дядя предложил помочь с рекламой и оплатить обучение, но вы отказались от этой возможности.",
+                "missing": "Дядя-бизнесмен предложил помочь с рекламой в Facebook (доход 600₴). К сожалению, вы не смогли воспользоваться этим шансом."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог дяде-бизнесмену и, применив новые знания, увеличил свой капитал на {Amount}₴.",
+                "decline": "Игрок {Player} отказался от предложения дяди помочь с бизнесом и пройти обучение.",
+                "missing": "Игроку {Player} предложили помочь с рекламой в Facebook за вознаграждение, но он не смог выполнить работу."
+            },
+            "amountChange": 600
+        },
+        {
+            "nr": 12,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 15,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Скорочтение",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЧТЕНИЕ",
+            "descriptionSelf": "Ты выиграл конкурс по скорочтению. Получил 15₴.",
+            "descriptionOthers": "{Player} выиграл конкурс по скорочтению и получил 15₴.",
+            "playerMessages": {
+                "success": "Поздравляем! Вы выиграли конкурс по скорочтению и получили {Amount}₴!",
+                "decline": "Вы решили не участвовать в конкурсе по скорочтению или отказались от приза.",
+                "missing": "Вы участвовали в конкурсе скорочтения, но не смогли забрать приз в 15₴."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил чудеса скорочтения, победил в конкурсе и получил {Amount}₴.",
+                "decline": "Игрок {Player} пропустил конкурс по скорочтению или отказался от награды.",
+                "missing": "Игрок {Player} участвовал в конкурсе скорочтения, но остался без призовых."
+            },
+            "amountChange": 15
+        },
+        {
+            "nr": 13,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Чтение книг",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЧТЕНИЕ",
+            "descriptionSelf": "Ты прочитал 2 книги из серии энциклопедии “Я познаю мир”. Получил 10₴.",
+            "descriptionOthers": "{Player} прочитал 2 книги из серии энциклопедии “Я познаю мир”. Получил 10₴.",
+            "playerMessages": {
+                "success": "Вы прочитали две познавательные книги из серии “Я познаю мир” и получили {Amount}₴!",
+                "decline": "Вы решили отложить чтение энциклопедий на потом.",
+                "missing": "За чтение книг серии “Я познаю мир” полагалась награда 10₴, но вы не получили её."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} расширяет кругозор! За чтение книг он получил {Amount}₴.",
+                "decline": "Игрок {Player} решил не читать предложенные книги.",
+                "missing": "Игрок {Player} прочитал энциклопедии, но не получил вознаграждение."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 14,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Стихотворения",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "СТИХОТВОРЕНИЯ",
+            "descriptionSelf": "Ты участвовал в конкурсе поэзии, где прочитал стихи А.С. Пушкина. Получил 10₴.",
+            "descriptionOthers": "{Player} участвовал в конкурсе поэзии, где прочитал стихи А.С. Пушкина. Получил 10₴.",
+            "playerMessages": {
+                "success": "Вы блестяще прочитали стихи А.С. Пушкина на конкурсе поэзии и получили {Amount}₴!",
+                "decline": "Вы решили не выступать на конкурсе поэзии со стихотворениями Пушкина.",
+                "missing": "Вы участвовали в конкурсе поэзии, но не получили приз за чтение стихов."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продемонстрировал талант чтеца на конкурсе поэзии и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отказался от участия в поэтическом конкурсе.",
+                "missing": "Игрок {Player} выступил на конкурсе поэзии, но остался без награды."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 15,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Гости",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ГОСТИ",
+            "descriptionSelf": "К вам домой приехали родственники в гости. Они дали вам 5₴ на шоколадку.",
+            "descriptionOthers": "К {Player} приехали родственники в гости. Они дали ему 5₴ на шоколадку.",
+            "playerMessages": {
+                "success": "В гости приехали родственники и подарили вам {Amount}₴ на шоколадку!",
+                "decline": "Родственники предложили вам денег на сладости, но вы вежливо отказались.",
+                "missing": "Приехали родственники и хотели угостить шоколадкой (5₴), но что-то пошло не так."
+            },
+            "otherPlayerMessages": {
+                "success": "К игроку {Player} заглянули родственники и презентовали ему {Amount}₴ на шоколадку.",
+                "decline": "Игрок {Player} отказался принимать карманные деньги от приехавших родственников.",
+                "missing": "Игрока {Player} навестили родственники, но он остался без подарка."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 16,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Гости",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ГОСТИ",
+            "descriptionSelf": "К вам домой приехали родственники в гости. Они дали вам 10₴ на шоколадку.",
+            "descriptionOthers": "К {Player} приехали родственники в гости. Они дали ему 10₴ на шоколадку.",
+            "playerMessages": {
+                "success": "Зашедшие в гости родственники решили побаловать вас и дали {Amount}₴ на сладости.",
+                "decline": "Вы решили не брать у родственников предложенные {Amount}₴ на шоколадку.",
+                "missing": "Родственники хотели дать вам 10₴ на карманные расходы, но вы их не получили."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} получил от приехавших в гости родственников {Amount}₴ на личные расходы.",
+                "decline": "Игрок {Player} проявил скромность и отказался от денег приехавших родственников.",
+                "missing": "Родственники игрока {Player} приехали в гости, но денежный подарок не состоялся."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 17,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Гости",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ГОСТИ",
+            "descriptionSelf": "К вам домой приехали родственники в гости. Они дали вам 10₴ на шоколадку.",
+            "descriptionOthers": "К {Player} приехали родственники в гости. Они дали ему 10₴ на шоколадку.",
+            "playerMessages": {
+                "success": "Радушные родственники приехали в гости и вручили вам {Amount}₴ на мелкие расходы.",
+                "decline": "Вы отказались от денежного подарка приехавших родственников.",
+                "missing": "Родственники привезли гостинцы и хотели дать вам 10₴, но подарок не дошел."
+            },
+            "otherPlayerMessages": {
+                "success": "Родственники навестили игрока {Player} и порадовали его суммой в {Amount}₴.",
+                "decline": "Игрок {Player} отказался принимать деньги от родственников, приехавших в гости.",
+                "missing": "К игроку {Player} приезжали гости, но денежного пополнения бюджета не произошло."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 18,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Круглый отличник",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КРУГЛЫЙ ОТЛИЧНИК",
+            "descriptionSelf": "В этом месяце в школе вы получали только отличные оценки. Родители похвалили и дали 10₴.",
+            "descriptionOthers": "В этом месяце {Player} получал в школе только отличные оценки. Родители похвалили его и дали 10₴.",
+            "playerMessages": {
+                "success": "Вы отлично учились весь месяц! Родители в восторге от ваших оценок и дали вам {Amount}₴.",
+                "decline": "Родители хотели наградить вас за отличную учебу, но вы решили не брать деньги.",
+                "missing": "За отличные оценки в школе полагалась награда 10₴, но вы её не получили."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} — отличник! Родители поощрили его за успехи в учебе суммой {Amount}₴.",
+                "decline": "Игрок {Player} получает одни пятерки, но от денежной премии родителей отказался.",
+                "missing": "Игрок {Player} закончил месяц на пятерки, но обещанную награду не получил."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 19,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 15,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Круглый отличник",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КРУГЛЫЙ ОТЛИЧНИК",
+            "descriptionSelf": "В этом месяце в школе вы получали только отличные оценки. Родители похвалили и дали 15₴.",
+            "descriptionOthers": "В этом месяце {Player} получал в школе только отличные оценки. Родители похвалили его и дали 15₴.",
+            "playerMessages": {
+                "success": "Ваше прилежание в школе оправдало себя! За месяц одних пятерок родители наградили вас: {Amount}₴.",
+                "decline": "Вы решили отказаться от денежного поощрения за отличные оценки.",
+                "missing": "Родители обещали 15₴ за отличную учебу в этом месяце, но выплата не состоялась."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} радует родителей отличными оценками и получил заслуженные {Amount}₴.",
+                "decline": "Игрок {Player} учится на отлично, но решил не принимать денежную награду от родителей.",
+                "missing": "Несмотря на отличные оценки, игрок {Player} не получил денежное поощрение от родителей."
+            },
+            "amountChange": 15
+        },
+        {
+            "nr": 20,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 3,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Выгул собак",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ВЫГУЛ СОБАК",
+            "descriptionSelf": "Ваш сосед попросил вас вывести его собаку погулять, так как у него нет времени, он заплатит вам 3₴.",
+            "descriptionOthers": "Сосед попросил {Player} вывести собаку погулять. Он заплатит ему 3₴.",
+            "playerMessages": {
+                "success": "Вы выручили соседа и погуляли с его собакой! За работу вы получили {Amount}₴.",
+                "decline": "Сосед просил выгулять собаку за {Amount}₴, но вы были заняты и отказались.",
+                "missing": "Поступило предложение выгулять соседскую собаку за 3₴. К сожалению, вы не смогли выполнить эту работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал выгулом соседской собаки и получил {Amount}₴.",
+                "decline": "Игрок {Player} отклонил просьбу соседа выгулять собаку за вознаграждение.",
+                "missing": "Игроку {Player} предложили выгулять собаку за деньги, но подработка сорвалась."
+            },
+            "amountChange": 3
+        },
+        {
+            "nr": 21,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 2,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Выгул собак",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ВЫГУЛ СОБАК",
+            "descriptionSelf": "Ваш сосед попросил вас вывести его собаку погулять, так как у него нет времени, он заплатит вам 2₴.",
+            "descriptionOthers": "Сосед попросил {Player} вывести собаку погулять. Он заплатит ему 2₴.",
+            "playerMessages": {
+                "success": "Вы помогли соседу с выгулом собаки и получили вознаграждение {Amount}₴.",
+                "decline": "Сосед просил выгулять собаку за {Amount}₴, но вы решили отказаться.",
+                "missing": "Вы планировали выгулять соседскую собаку за 2₴, но не смогли это сделать."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} погулял с соседской собакой и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отказался от предложения соседа выгулять собаку за деньги.",
+                "missing": "Игроку {Player} предложили небольшую плату за выгул собаки, но подработка не состоялась."
+            },
+            "amountChange": 2
+        },
+        {
+            "nr": 22,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Работа на даче",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "РАБОТА НА ДАЧЕ",
+            "descriptionSelf": "Дедушка попросил вам перекопать огород на даче. Он вознаградил вас 5₴.",
+            "descriptionOthers": "Дедушка попросил {Player} перекопать огород на даче. Он вознаградил его 5₴.",
+            "playerMessages": {
+                "success": "Вы отлично потрудились на даче у дедушки! За перекопку огорода он дал вам {Amount}₴.",
+                "decline": "Дедушка просил помочь на даче, но вы решили отказаться от работы и вознаграждения.",
+                "missing": "Дедушка обещал 5₴ за помощь в огороде, но вы не смогли выполнить работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} перекопал огород на даче у дедушки и получил {Amount}₴ вознаграждения.",
+                "decline": "Игрок {Player} отказался помогать дедушке на даче за {Amount}₴.",
+                "missing": "Игроку {Player} дедушка предложил подработку на даче, но тот не смог помочь."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 23,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 6,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Работа на даче",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "РАБОТА НА ДАЧЕ",
+            "descriptionSelf": "Дедушка попросил вам перекопать огород на даче. Он вознаградил вас 6₴.",
+            "descriptionOthers": "Дедушка попросил {Player} перекопать огород на даче. Он вознаградил его 6₴.",
+            "playerMessages": {
+                "success": "Вы перекопали дедушке огород на даче и получили честно заработанные {Amount}₴.",
+                "decline": "Вы решили не заниматься тяжелым трудом на даче и отказались от предложения дедушки.",
+                "missing": "Дедушка предложил 6₴ за работу на даче, но вы не смогли перекопать огород."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог дедушке на даче с огородом и пополнил бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение дедушки поработать на даче за {Amount}₴.",
+                "missing": "Игроку {Player} предложили перекопать огород на даче, но работа не была выполнена."
+            },
+            "amountChange": 6
+        },
+        {
+            "nr": 24,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 6,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка жилья",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ЖИЛЬЯ",
+            "descriptionSelf": "Родители попросили вас сделать уборку в квартире, вы справились на УРА и получили 6₴.",
+            "descriptionOthers": "Родители попросили {Player} сделать уборку в квартире, он справился на УРА и получил 6₴.",
+            "playerMessages": {
+                "success": "Вы провели генеральную уборку в квартире! Родители оценили ваш труд в {Amount}₴.",
+                "decline": "Родители просили убраться в квартире за {Amount}₴, но вы решили отказаться.",
+                "missing": "За уборку в квартире полагалось 6₴, но вы не завершили работу и не получили денег."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} навел идеальный порядок в квартире и получил от родителей {Amount}₴.",
+                "decline": "Игрок {Player} отказался от платной уборки квартиры, предложенной родителями.",
+                "missing": "Игроку {Player} предложили деньги за уборку, но он не справился с задачей."
+            },
+            "amountChange": 6
+        },
+        {
+            "nr": 25,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка жилья",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ЖИЛЬЯ",
+            "descriptionSelf": "Родители попросили вас сделать уборку в квартире, вы справились на УРА и получили 5₴.",
+            "descriptionOthers": "Родители попросили {Player} сделать уборку в квартире, он справился на УРА и получил 5₴.",
+            "playerMessages": {
+                "success": "Вы отлично справились с уборкой квартиры и получили от родителей {Amount}₴.",
+                "decline": "Вы решили не делать уборку, несмотря на предложенное вознаграждение в {Amount}₴.",
+                "missing": "Вы планировали убраться в квартире за 5₴, но не смогли этого сделать."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} сделал уборку в квартире 'на ура' и заработал {Amount}₴.",
+                "decline": "Игрок {Player} не захотел делать уборку в квартире за {Amount}₴.",
+                "missing": "Игроку {Player} родители предложили вознаграждение за уборку, но он не выполнил просьбу."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 26,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 4,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка жилья",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ЖИЛЬЯ",
+            "descriptionSelf": "Родители попросили вас сделать уборку в квартире, вы справились на УРА и получили 4₴.",
+            "descriptionOthers": "Родители попросили {Player} сделать уборку в квартире, он справился на УРА и получил 4₴.",
+            "playerMessages": {
+                "success": "За блестящую уборку квартиры родители вознаградили вас суммой {Amount}₴.",
+                "decline": "Вы отказались от предложения родителей сделать уборку за {Amount}₴.",
+                "missing": "За помощь по дому с уборкой полагалось 4₴, но вы не получили эти деньги."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} прибрался в квартире и получил от родителей {Amount}₴.",
+                "decline": "Игрок {Player} решил не делать уборку за предложенные {Amount}₴.",
+                "missing": "Игрок {Player} должен был убраться в квартире за вознаграждение, но не сделал этого."
+            },
+            "amountChange": 4
+        },
+        {
+            "nr": 27,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Волонтерство",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ВОЛОНТЕРСТВО",
+            "descriptionSelf": "Ты увидел в Инстаграме объявление - О сборе детских вещей ко дню защиты детей. Куда требуются волонтёры. Твои родители были очень довольны твоим решением. У тебя есть возможность играть двумя косточками два раза.",
+            "descriptionOthers": "{Player} может участвовать в сборе детских вещей ко дню защиты детей. У {Player} есть возможность играть двумя косточками два раза.",
+            "playerMessages": {
+                "success": "Вы стали волонтером в акции по сбору детских вещей! Получен бонус: 2 кубика на 2 хода.",
+                "decline": "Вы решили не участвовать в волонтерской акции по сбору вещей.",
+                "missing": "Вы хотели стать волонтером и помочь детям, но не смогли присоединиться к акции."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил инициативу в волонтерском сборе вещей и получил бонус к движению.",
+                "decline": "Игрок {Player} отказался от участия в волонтерской деятельности.",
+                "missing": "Игрок {Player} не смог принять участие в благотворительном сборе вещей."
+            },
+            "amountChange": 0,
+            "buff": {
+                "type": "double_dice",
+                "duration": 2
+            }
+        },
+        {
+            "nr": 28,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Помощь бабушке",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ БАБУШКЕ",
+            "descriptionSelf": "Бабушка попросила помочь в огороде, за это она вознаградила вас дав 5₴.",
+            "descriptionOthers": "Бабушка попросила {Player} помочь в огороде, за это она вознаградила его дав 5₴.",
+            "playerMessages": {
+                "success": "Вы помогли бабушке в огороде, и она дала вам {Amount}₴ в знак благодарности.",
+                "decline": "Бабушка просила помочь с огородом за {Amount}₴, но вы решили отказаться.",
+                "missing": "Бабушка обещала 5₴ за помощь на грядках, но вы не смогли ей помочь."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выручил бабушку в огороде и получил от неё {Amount}₴.",
+                "decline": "Игрок {Player} отклонил просьбу бабушки о помощи в огороде за {Amount}₴.",
+                "missing": "Игроку {Player} предложили подзаработать у бабушки на огороде, но помощь не состоялась."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 29,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Помощь бабушке",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОМОЩЬ БАБУШКЕ",
+            "descriptionSelf": "Бабушка попросила помочь в огороде, за это она вознаградила вас дав 10₴.",
+            "descriptionOthers": "Бабушка попросила {Player} помочь в огороде, за это она вознаградила его дав 10₴.",
+            "playerMessages": {
+                "success": "За хорошую работу в огороде бабушка вознаградила вас подарком в {Amount}₴.",
+                "decline": "Вы решили не помогать бабушке в огороде, несмотря на предложенные {Amount}₴.",
+                "missing": "Вы планировали помочь бабушке с огородом за 10₴, но работа не была выполнена."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} потрудился на огороде у бабушки и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отказался от предложения бабушки поработать в огороде за {Amount}₴.",
+                "missing": "Игроку {Player} предложили деньги за помощь бабушке, но он не смог помочь."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 30,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 80,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Магазин мебели",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "МАГАЗИН МЕБЕЛИ",
+            "descriptionSelf": "В магазин мебели на 2 дня нужны рабочие для мелких работ по сборке мебели. Оплатят 80₴.",
+            "descriptionOthers": "{Player} устроился рабочим в магазин мебели на 2 дня. Оплатят 80₴.",
+            "playerMessages": {
+                "success": "Вы успешно подработали сборщиком в магазине мебели и получили {Amount}₴!",
+                "decline": "Вам предложили 2 дня поработать в магазине мебели за {Amount}₴, но вы отказались.",
+                "missing": "Вам предложили подработку в магазине мебели (оплата 80₴). К сожалению, вы не смогли выполнить работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} два дня собирал мебель в магазине и пополнил бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение поработать сборщиком мебели за {Amount}₴.",
+                "missing": "Игроку {Player} предложили поработать в магазине мебели, но подработка сорвалась."
+            },
+            "amountChange": 80
+        },
+        {
+            "nr": 31,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Промоутер)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Одной фирме нужен промоутер для раздачи листовок, они готовы заплатить 10₴.",
+            "descriptionOthers": "{Player} работал промоутером для раздачи листовок, ему заплатили 10₴.",
+            "playerMessages": {
+                "success": "Вы поработали промоутером и получили {Amount}₴ за раздачу листовок.",
+                "decline": "Вам предложили раздавать листовки за {Amount}₴, но вы решили отказаться.",
+                "missing": "Была возможность подработать промоутером за 10₴. К сожалению, вы не смогли взяться за это."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} раздавал рекламные листовки как промоутер и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отказался от подработки промоутером за {Amount}₴.",
+                "missing": "Игроку {Player} предложили раздавать листовки, но он не смог выполнить работу."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 32,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 8,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Промоутер)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Одной фирме нужен промоутер для раздачи листовок, они готовы заплатить 8₴.",
+            "descriptionOthers": "{Player} работал промоутером для раздачи листовок, ему заплатили 8₴.",
+            "playerMessages": {
+                "success": "За раздачу рекламных листовок фирма выплатила вам {Amount}₴.",
+                "decline": "Вы не захотели работать промоутером за {Amount}₴ и отклонили предложение.",
+                "missing": "Поступило предложение подработать промоутером за 8₴, но вы не смогли пойти раздавать листовки."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал промоутером и получил {Amount}₴ за раздачу рекламы.",
+                "decline": "Игрок {Player} решил не связываться с раздачей листовок за {Amount}₴.",
+                "missing": "Игроку {Player} предложили поработать промоутером, но у него не получилось."
+            },
+            "amountChange": 8
+        },
+        {
+            "nr": 33,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Статья)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Вас попросили написать статью для местной газеты о вашей школе. За это вам заплатили 5₴.",
+            "descriptionOthers": "{Player} попросили написать статью для местной газеты о школе. За это ему заплатили 5₴.",
+            "playerMessages": {
+                "success": "Вашу статью о школе опубликовали в местной газете! Гонорар составил {Amount}₴.",
+                "decline": "Вас просили написать статью для газеты за {Amount}₴, но вы не захотели писать.",
+                "missing": "За статью для местной газеты обещали 5₴, но ваша работа не была опубликована."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} написал статью в местную газету и получил гонорар {Amount}₴.",
+                "decline": "Игрок {Player} отказался писать статью о школе для местной газеты.",
+                "missing": "Игроку {Player} предложили написать статью за деньги, но публикация не состоялась."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 34,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 4,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Статья)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Вас попросили написать статью для местной газеты о вашей школе. За это вам заплатили 4₴.",
+            "descriptionOthers": "{Player} попросили написать статью для местной газеты о школе. За это ему заплатили 4₴.",
+            "playerMessages": {
+                "success": "Вы написали отличную статью о своей школе в газету и заработали {Amount}₴.",
+                "decline": "Вы отклонили предложение написать статью для газеты за {Amount}₴.",
+                "missing": "Вам предложили 4₴ за статью в местную газету, но вы не смогли её подготовить."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} заработал {Amount}₴, написав статью в газету о школьной жизни.",
+                "decline": "Игрок {Player} решил не писать статью для газеты за {Amount}₴.",
+                "missing": "Игроку {Player} предложили написать статью за вознаграждение, но он не справился."
+            },
+            "amountChange": 4
+        },
+        {
+            "nr": 35,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Покраска забора)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Ваш сосед красит свой забор. За вашу помощь он готов заплатить 5₴.",
+            "descriptionOthers": "Сосед {Player} красит свой забор. За помощь он заплатил ему 5₴.",
+            "playerMessages": {
+                "success": "Вы помогли соседу покрасить забор и получили за это {Amount}₴.",
+                "decline": "Сосед предлагал подзаработать на покраске забора за {Amount}₴, но вы отказались.",
+                "missing": "Вы планировали помочь соседу с покраской забора за 5₴, но работа не была выполнена."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог соседу покрасить забор и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение соседа покрасить забор за деньги.",
+                "missing": "Игроку {Player} предложили подзаработать на покраске забора, но помощь не состоялась."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 36,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 5,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Подработка (Выгул собаки)",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОДРАБОТКА",
+            "descriptionSelf": "Ваши соседи предложили вам погулять with их собакой целую неделю за 5₴.",
+            "descriptionOthers": "Соседи предложили {Player} погулять с их собакой целую неделю за 5₴.",
+            "playerMessages": {
+                "success": "Вы целую неделю гуляли с соседской собакой и заработали {Amount}₴!",
+                "decline": "Соседи предлагали выгуливать их собаку неделю за {Amount}₴, но вы не согласились.",
+                "missing": "За неделю выгула соседской собаки полагалось 5₴, но вы не смогли выполнить это обязательство."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} целую неделю выгуливал соседскую собаку и получил {Amount}₴.",
+                "decline": "Игрок {Player} отказался от недельной подработки по выгулу собаки за {Amount}₴.",
+                "missing": "Игрок {Player} не смог выпонить условия недельной подработки по выгулу собаки."
+            },
+            "amountChange": 5
+        },
+        {
+            "nr": 37,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 30,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Олимпиада",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ОЛИМПИАДА",
+            "descriptionSelf": "Вы участвовали на олимпиаде по любимому уроку, и заняли 1 место. За это родители дали вам 30₴.",
+            "descriptionOthers": "{Player} участвовал на олимпиаде по любимому уроку, и занял 1 место. За это родители дали ему 30₴.",
+            "playerMessages": {
+                "success": "Вы блестяще выступили на олимпиаде и заняли 1 место! Родители наградили вас: {Amount}₴.",
+                "decline": "Родители хотели дать вам денег за победу в олимпиаде, но вы вежливо отказались.",
+                "missing": "За 1 место на олимпиаде полагалась награда 30₴, но вы её не получили."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} занял 1 место на школьной олимпиаде! Родители дали ему {Amount}₴.",
+                "decline": "Игрок {Player} победил в олимпиаде, но решил не брать денежную награду у родителей.",
+                "missing": "Несмотря на 1 место в олимпиаде, игрок {Player} остался без денежного поощрения."
+            },
+            "amountChange": 30
+        },
+        {
+            "nr": 38,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Олимпиада",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ОЛИМПИАДА",
+            "descriptionSelf": "Вы участвовали на олимпиаде по любимому уроку, и заняли 2 место. За это родители дали вам 20₴.",
+            "descriptionOthers": "{Player} участвовал на олимпиаде по любимому уроку, и занял 2 место. За это родители дали ему 20₴.",
+            "playerMessages": {
+                "success": "Вы заняли 2 место на олимпиаде по любимому предмету! Родители поощрили вас суммой {Amount}₴.",
+                "decline": "Вы решили не брать у родителей деньги за 2 место в олимпиаде.",
+                "missing": "За 2 место на олимпиаде полагалась награда 20₴, но выплата не состоялась."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} стал призером олимпиады (2 место) и получил от родителей {Amount}₴.",
+                "decline": "Игрок {Player} занял 2 место в олимпиаде, но отказался от денежного приза родителей.",
+                "missing": "Игрок {Player} занял 2 место в олимпиаде, но не получил обещанное вознаграждение."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 39,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 15,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Олимпиада",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ОЛИМПИАДА",
+            "descriptionSelf": "Вы участвовали на олимпиаде по любимому уроку, и заняли 3 место. За это родители дали вам 15₴.",
+            "descriptionOthers": "{Player} участвовал на олимпиаде по любимому уроку, и занял 3 место. За это родители дали ему 15₴.",
+            "playerMessages": {
+                "success": "Вы вошли в тройку лидеров на олимпиаде! Родители дали вам {Amount}₴ за 3 место.",
+                "decline": "Вы отказались от денежного вознаграждения за 3 место в школьной олимпиаде.",
+                "missing": "За 3 место на олимпиаде родители обещали 15₴, но вы их не получили."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} занял 3 место на олимпиаде и получил от родителей {Amount}₴.",
+                "decline": "Игрок {Player} занял 3 место в олимпиаде, но решил не принимать деньги в подарок.",
+                "missing": "Игрок {Player} вошел в число призеров олимпиады, но остался без денежной премии."
+            },
+            "amountChange": 15
+        }
+    ]
+}

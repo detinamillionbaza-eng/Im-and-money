@@ -1,0 +1,816 @@
+{
+    "cards": [
+        {
+            "nr": 1,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 25,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка подъездов",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ПОДЪЕЗДОВ",
+            "descriptionSelf": "Одному району требуется уборка их подъездов. Вы выполнили работу и получили 25₴.",
+            "descriptionOthers": "Одному району требуется уборка их подъездов. {Player} выполнил работу и получил 25₴.",
+            "playerMessages": {
+                "success": "Вы навели порядок в подъездах и получили честно заработанные {Amount}₴.",
+                "decline": "Вы решили не браться за уборку подъездов в этом районе.",
+                "missing": "Поступило предложение по уборке подъездов за 25₴, но вы не смогли выполнить работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} поработал над чистотой в подъездах района и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение по уборке подъездов.",
+                "missing": "Игроку {Player} предложили убраться в подъездах за деньги, но подработка не состоялась."
+            },
+            "amountChange": 25
+        },
+        {
+            "nr": 2,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка подъездов",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ПОДЪЕЗДОВ",
+            "descriptionSelf": "Одному району требуется уборка их подъездов. Вы выполнили работу и получили 10₴.",
+            "descriptionOthers": "Одному району требуется уборка их подъездов. {Player} выполнил работу и получил 10₴.",
+            "playerMessages": {
+                "success": "За качественную уборку подъездов вам выплатили вознаграждение в размере {Amount}₴.",
+                "decline": "Вы отказались от предложения подзаработать на уборке подъездов.",
+                "missing": "Вы хотели поработать на уборке подъездов за 10₴, но что-то пошло не так."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал на уборке подъездов и пополнил свой бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} решил не заниматься уборкой подъездов.",
+                "missing": "Игроку {Player} предложили помыть подъезды за плату, но работа сорвалась."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 3,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 30,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Уборка подъездов",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "УБОРКА ПОДЪЕЗДОВ",
+            "descriptionSelf": "Одному району требуется уборка их подъездов. Вы выполнили работу и получили 30₴.",
+            "descriptionOthers": "Одному району требуется уборка их подъездов. {Player} выполнил работу и получил 30₴.",
+            "playerMessages": {
+                "success": "Вы отлично справились с уборкой подъездов и получили от заказчика {Amount}₴.",
+                "decline": "Вы отклонили предложение по уборке подъездов за {Amount}₴.",
+                "missing": "За уборку подъездов обещали 30₴, но вы не получили эту подработку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} привел в порядок подъезды и заработал на этом {Amount}₴.",
+                "decline": "Игрок {Player} отказался от высокооплачиваемой уборки подъездов.",
+                "missing": "Игроку {Player} предложили хорошие деньги за уборку подъездов, но он не смог пойти."
+            },
+            "amountChange": 30
+        },
+        {
+            "nr": 4,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 250,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Ноутбук",
+            "requiredAsset": "Ноутбук",
+            "requiredSkill": null,
+            "title": "НОУТБУК",
+            "descriptionSelf": "Объявление: Куплю ноутбук хорошего качества. Вы можете продать ноутбук и получить 250₴.",
+            "descriptionOthers": "Объявление: Куплю ноутбук хорошего качества. {Player} может продать ноутбук и получить 250₴.",
+            "playerMessages": {
+                "success": "Сделка состоялась! Вы продали свой ноутбук за {Amount}₴.",
+                "decline": "Вы решили оставить ноутбук себе и отказались от продажи.",
+                "missing": "Покупатель ищет ноутбук (250₴), но у вас нет подходящего устройства для продажи."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} нашел покупателя и выгодно продал свой ноутбук за {Amount}₴.",
+                "decline": "Игрок {Player} решил не расставаться со своим ноутбуком.",
+                "missing": "Покупатель интересовался ноутбуком игрока {Player}, но у него его не оказалось."
+            },
+            "amountChange": 250
+        },
+        {
+            "nr": 5,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 150,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Гироскутер",
+            "requiredAsset": "Гироскутер",
+            "requiredSkill": null,
+            "title": "ГИРОСКУТЕР",
+            "descriptionSelf": "Объявление: Куплю БУ гироскутер. Вы можете продать гироскутер и получить 150₴.",
+            "descriptionOthers": "Объявление: Куплю БУ гироскутер. {Player} может продать гироскутер и получить 150₴.",
+            "playerMessages": {
+                "success": "Вы продали подержанный гироскутер по объявлению и получили {Amount}₴.",
+                "decline": "Вы решили не продавать гироскутер и отклонили предложение.",
+                "missing": "По объявлению требуется БУ гироскутер (150₴), но у вас его нет в наличии."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свой БУ гироскутер и выручил за него {Amount}₴.",
+                "decline": "Игрок {Player} отказался продавать свой гироскутер покупателю.",
+                "missing": "Игрок {Player} мог бы продать гироскутер, но у него нет этого девайса."
+            },
+            "amountChange": 150
+        },
+        {
+            "nr": 6,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 50,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Самокат",
+            "requiredAsset": "Самокат",
+            "requiredSkill": null,
+            "title": "САМОКАТ",
+            "descriptionSelf": "Объявление: Куплю самокат. Вы можете продать самокат и получить 50₴.",
+            "descriptionOthers": "Объявление: Куплю самокат. {Player} может продать самокат и получить 50₴.",
+            "playerMessages": {
+                "success": "Покупатель нашелся! Вы продали самокат и получили {Amount}₴.",
+                "decline": "Вы решили, что самокат вам еще пригодится, и отменили продажу.",
+                "missing": "Кто-то ищет самокат для покупки (50₴), но у вас его нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} успешно продал самокат и пополнил свой кошелек на {Amount}₴.",
+                "decline": "Игрок {Player} передумал продавать свой самокат.",
+                "missing": "Игроку {Player} поступило предложение о покупке самоката, но продавать ему нечего."
+            },
+            "amountChange": 50
+        },
+        {
+            "nr": 7,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 200,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Игровая приставка",
+            "requiredAsset": "Игровая приставка",
+            "requiredSkill": null,
+            "title": "ИГРОВАЯ ПРИСТАВКА",
+            "descriptionSelf": "Объявление: Выкупаем игровые приставки. Вы можете продать приставку и получить 200₴.",
+            "descriptionOthers": "Объявление: Выкупаем игровые приставки. {Player} может продать приставку и получить 200₴.",
+            "playerMessages": {
+                "success": "Вы сдали игровую приставку в скупку и получили {Amount}₴.",
+                "decline": "Вы решили не расставаться с игровой приставкой.",
+                "missing": "В скупку требуются игровые приставки (200₴), но у вас её нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свою игровую приставку и получил {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение о выкупе игровой приставки.",
+                "missing": "Скупка интересуется приставкой игрока {Player}, но у него её нет."
+            },
+            "amountChange": 200
+        },
+        {
+            "nr": 8,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 180,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Планшет",
+            "requiredAsset": "Планшет",
+            "requiredSkill": null,
+            "title": "ПЛАНШЕТ",
+            "descriptionSelf": "Один человек ищет планшет для работы. Вы можете продать планшет и получить 180₴.",
+            "descriptionOthers": "Один человек ищет планшет для работы. {Player} может продать планшет и получить 180₴.",
+            "playerMessages": {
+                "success": "Вы продали планшет человеку, которому он нужен для работы, и получили {Amount}₴.",
+                "decline": "Вы решили оставить планшет для собственного использования.",
+                "missing": "Человек ищет планшет для работы (180₴), но вы не можете его предложить."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал планшет для рабочих нужд покупателя и выручил {Amount}₴.",
+                "decline": "Игрок {Player} отказался от продажи планшета.",
+                "missing": "Покупатель планшета не смог договориться с игроком {Player}, так как у того его нет."
+            },
+            "amountChange": 180
+        },
+        {
+            "nr": 9,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 130,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Велосипед",
+            "requiredAsset": "Велосипед",
+            "requiredSkill": null,
+            "title": "ВЕЛОСИПЕД",
+            "descriptionSelf": "Объявление: Выкупаем велосипеды. Вы можете продать велосипед и получить 130₴.",
+            "descriptionOthers": "Объявление: Выкупаем велосипеды. {Player} может продать велосипед и получить 130₴.",
+            "playerMessages": {
+                "success": "Вы воспользовались услугами выкупа и продали велосипед за {Amount}₴.",
+                "decline": "Вы решили оставить велосипед себе для поездок.",
+                "missing": "Служба выкупа ищет велосипеды (130₴), но у вас нет велосипеда."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} сдал велосипед в выкуп и получил {Amount}₴.",
+                "decline": "Игрок {Player} отказался продавать велосипед через выкуп.",
+                "missing": "Игрок {Player} не смог продать велосипед, так как он его еще не приобрел."
+            },
+            "amountChange": 130
+        },
+        {
+            "nr": 10,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 130,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Телефон",
+            "requiredAsset": "Телефон",
+            "requiredSkill": null,
+            "title": "ТЕЛЕФОН",
+            "descriptionSelf": "Объявление: Один человек скупает телефоны. Вы можете продать телефон и получить 130₴.",
+            "descriptionOthers": "Объявление: Один человек скупает телефоны. {Player} может продать телефон и получить 130₴.",
+            "playerMessages": {
+                "success": "Вы успешно продали телефон скупщику и пополнили бюджет на {Amount}₴.",
+                "decline": "Вы решили не продавать свой телефон по предложенной цене.",
+                "missing": "Скупщик ищет телефоны (130₴), но вам нечего ему предложить."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свой мобильный телефон и получил {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение о покупке телефона.",
+                "missing": "У игрока {Player} нет лишнего телефона для продажи скупщику."
+            },
+            "amountChange": 130
+        },
+        {
+            "nr": 11,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 100,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Умные часы",
+            "requiredAsset": "Умные часы",
+            "requiredSkill": null,
+            "title": "УМНЫЕ ЧАСЫ",
+            "descriptionSelf": "Объявление: Куплю умные часы. Вы можете продать свои часы за 100₴.",
+            "descriptionOthers": "Объявление: Куплю умные часы. {Player} получил предложение продать часы за 100₴.",
+            "playerMessages": {
+                "success": "Вы продали свои умные часы по объявлению и получили {Amount}₴.",
+                "decline": "Вы решили не расставаться со своими умными часами.",
+                "missing": "Кто-то хочет купить умные часы (100₴), но у вас их нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выгодно продал через объявление свои умные часы за {Amount}₴.",
+                "decline": "Игрок {Player} отказался от предложения продать часы.",
+                "missing": "Игрок {Player} не смог продать умные часы, так как у него их нет."
+            },
+            "amountChange": 100
+        },
+        {
+            "nr": 12,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 80,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Магнитофон",
+            "requiredAsset": "Магнитофон",
+            "requiredSkill": null,
+            "title": "МАГНИТОФОН",
+            "descriptionSelf": "Один человек скупает магнитофоны. Вы можете продать свой магнитофон за 80₴.",
+            "descriptionOthers": "Один человек скупает магнитофоны. {Player} получил предложение продать магнитофон за 80₴.",
+            "playerMessages": {
+                "success": "Вы нашли покупателя на старый магнитофон и выручили {Amount}₴.",
+                "decline": "Вы решили оставить магнитофон у себя в коллекции.",
+                "missing": "Покупатель ищет магнитофон (80₴), но у вас нет этого устройства."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свой магнитофон за {Amount}₴.",
+                "decline": "Игрок {Player} передумал продавать магнитофон.",
+                "missing": "Игроку {Player} предложили продать магнитофон, но у него его нет."
+            },
+            "amountChange": 80
+        },
+        {
+            "nr": 13,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 60,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Аниматор",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "НУЖЕН АНИМАТОР",
+            "descriptionSelf": "Требуются аниматоры для праздника. Вы поработали и получили 60₴.",
+            "descriptionOthers": "Требуются аниматоры для праздника. {Player} поработал и получил 60₴.",
+            "playerMessages": {
+                "success": "Вы отлично поработали аниматором на празднике и получили {Amount}₴.",
+                "decline": "Вы решили не работать аниматором и отказались от предложения.",
+                "missing": "На праздник требовались аниматоры (оплата 60₴). К сожалению, вы не получили эту работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} примерил роль аниматора на празднике и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отказался от подработки аниматором.",
+                "missing": "Игроку {Player} предложили поработать аниматором за деньги, но подработка сорвалась."
+            },
+            "amountChange": 60
+        },
+        {
+            "nr": 14,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 40,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Аниматор",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "НУЖЕН АНИМАТОР",
+            "descriptionSelf": "Требуются аниматоры для праздника. Вы поработали и получили 40₴.",
+            "descriptionOthers": "Требуются аниматоры для праздника. {Player} поработал и получил 40₴.",
+            "playerMessages": {
+                "success": "За проведение праздника в роли аниматора вы получили выплату {Amount}₴.",
+                "decline": "Вы не захотели работать аниматором на этом мероприятии.",
+                "missing": "Была вакансия аниматора на праздник за 40₴, но вы не смогли поучаствовать."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал аниматором на мероприятии и пополнил бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} решил не браться за работу аниматора.",
+                "missing": "Игроку {Player} поступило предложение поработать аниматором, но оно осталось без ответа."
+            },
+            "amountChange": 40
+        },
+        {
+            "nr": 15,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": "Ремонт компьютеров",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "computer_repair",
+            "title": "РЕМОНТ НОУТБУКА",
+            "descriptionSelf": "Сервисная компания ищет мастеров. Вы выполнили мелкий ремонт и получили 20₴.",
+            "descriptionOthers": "Сервисная компания ищет мастеров. {Player} может выполнить мелкий ремонт и получить 20₴.",
+            "playerMessages": {
+                "success": "Вы успешно применили навык ремонта и получили {Amount}₴ за починку ноутбука.",
+                "decline": "Вам предложили починить ноутбук за {Amount}₴, но вы отказались от заказа.",
+                "missing": "Сервисной компании нужен мастер для ремонта ноутбука (20₴). К сожалению, у вас нет нужного навыка."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} мастерски починил ноутбук и заработал за свою работу {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение по ремонту ноутбука.",
+                "missing": "Игроку {Player} предложили починить ноутбук, но у него нет соответствующего навыка."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 16,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": "Ремонт компьютеров",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "computer_repair",
+            "title": "РЕМОНТ НОУТБУКА",
+            "descriptionSelf": "Сервисная компания ищет мастеров. Вы выполнили мелкий ремонт и получили 10₴.",
+            "descriptionOthers": "Сервисная компания ищет мастеров. {Player} может выполнить мелкий ремонт и получить 10₴.",
+            "playerMessages": {
+                "success": "Мелкий ремонт ноутбука выполнен! За работу в сервисном центре вам заплатили {Amount}₴.",
+                "decline": "Вы решили не брать заказ на ремонт ноутбука за {Amount}₴.",
+                "missing": "Для ремонта ноутбука (10₴) требуется навык ремонта ПК, которого у вас пока нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выполнил мелкий ремонт ноутбука в сервисе и получил {Amount}₴.",
+                "decline": "Игрок {Player} решил не заниматься ремонтом техники в этот раз.",
+                "missing": "Сервис искал мастера для ремонта, но у игрока {Player} нет нужной квалификации."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 17,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": "Веб-дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "web_designer",
+            "title": "НУЖЕН WEB ДИЗАЙНЕР",
+            "descriptionSelf": "Заказчику нужен веб дизайнер. Вы выполнили проект и получили 20₴.",
+            "descriptionOthers": "Заказчику нужен веб дизайнер. {Player} может выполнить проект и получить 20₴.",
+            "playerMessages": {
+                "success": "Ваш дизайн-проект одобрен! Вы получили заслуженное вознаграждение {Amount}₴.",
+                "decline": "Заказчику нужен был веб-дизайн, но вы решили не брать этот проект.",
+                "missing": "Для выполнения проекта по веб-дизайну (20₴) вам требуется соответствующий навык."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выполнил качественный веб-дизайн для заказчика и заработал {Amount}₴.",
+                "decline": "Игрок {Player} решил не связываться с новым дизайн-проектом.",
+                "missing": "Игроку {Player} предложили заказ на веб-дизайн, но у него нет этого навыка."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 18,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 30,
+            "businessName": null,
+            "skillName": "Веб-дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "web_designer",
+            "title": "НУЖЕН WEB ДИЗАЙНЕР",
+            "descriptionSelf": "Заказчику нужен веб дизайнер. Вы выполнили проект и получили 30₴.",
+            "descriptionOthers": "Заказчику нужен веб дизайнер. {Player} может выполнить проект и получить 30₴.",
+            "playerMessages": {
+                "success": "Проект по веб-дизайну завершен! Заказчик выплатил вам гонорар в размере {Amount}₴.",
+                "decline": "Вы отклонили предложение поработать над веб-дизайном за {Amount}₴.",
+                "missing": "Поступил заказ на веб-дизайн (30₴). К сожалению, вы еще не освоили этот навык."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} успешно сдал проект по веб-дизайну и пополнил бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} не стал браться за сложный проект по веб-дизайну.",
+                "missing": "Игроку {Player} предложили высокооплачиваемый дизайн-проект, но у него нет нужных навыков."
+            },
+            "amountChange": 30
+        },
+        {
+            "nr": 19,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 180,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Планшет",
+            "requiredAsset": "Планшет",
+            "requiredSkill": null,
+            "title": "ПЛАНШЕТ",
+            "descriptionSelf": "Один человек ищет планшет для работы. Вы можете продать планшет и получить 180₴.",
+            "descriptionOthers": "Один человек ищет планшет для работы. {Player} может продать планшет и получить 180₴.",
+            "playerMessages": {
+                "success": "Вы продали свой планшет покупателю, которому он нужен для работы, за {Amount}₴.",
+                "decline": "Вы решили повременить с продажей планшета и отказались от сделки.",
+                "missing": "Работодатель ищет планшет для сотрудника (180₴), но у вас нет планшета на продажу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свой планшет человеку для работы и выручил {Amount}₴.",
+                "decline": "Игрок {Player} решил не расставаться со своим планшетом за {Amount}₴.",
+                "missing": "Покупатель интересовался планшетом игрока {Player}, но продавать тому нечего."
+            },
+            "amountChange": 180
+        },
+        {
+            "nr": 20,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": "Дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "designer",
+            "title": "НУЖЕН ДИЗАЙНЕР",
+            "descriptionSelf": "Фирме нужны дизайнеры для удаленной работы. Вы выполнили заказ и получили 10₴.",
+            "descriptionOthers": "Фирме нужны дизайнеры для удаленной работы. {Player} может выполнить заказ и получить 10₴.",
+            "playerMessages": {
+                "success": "Вы выполнили удаленный дизайн-заказ для фирмы и получили {Amount}₴.",
+                "decline": "Фирма предлагала удаленную работу дизайнером, но вы решили не соглашаться.",
+                "missing": "Фирме нужны дизайнеры для удаленной работы (10₴). К сожалению, у вас нет навыка дизайна."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал удаленно дизайнером в фирме и заработал {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение фирмы об удаленной работе дизайнером.",
+                "missing": "Игроку {Player} предложили подработать дизайнером, но у него нет этого навыка."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 21,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": "Дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "designer",
+            "title": "НУЖЕН ДИЗАЙНЕР",
+            "descriptionSelf": "Фирме нужны дизайнеры для удаленной работы. Вы выполнили заказ и получили 20₴.",
+            "descriptionOthers": "Фирме нужны дизайнеры для удаленной работы. {Player} может выполнить заказ и получить 20₴.",
+            "playerMessages": {
+                "success": "Ваш качественный дизайн-заказ принят фирмой! Вам выплатили {Amount}₴.",
+                "decline": "Вы решили не брать новый удаленный заказ по дизайну за {Amount}₴.",
+                "missing": "Для удаленной работы дизайнером (20₴) требуется соответствующий навык, которого у вас нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подготовил дизайн-макет для фирмы и получил гонорар {Amount}₴.",
+                "decline": "Игрок {Player} не захотел брать дополнительную работу по дизайну.",
+                "missing": "Фирма искала дизайнера для заказа, но у игрока {Player} нет нужной квалификации."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 22,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Клининг квартир",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КЛИНИНГ КВАРТИР",
+            "descriptionSelf": "Нужны команды для уборки квартир. Вы убрались и получили 20₴.",
+            "descriptionOthers": "Нужны команды для уборки квартир. {Player} убрался и получил 20₴.",
+            "playerMessages": {
+                "success": "Вы провели уборку в квартире в составе команды клининга и получили {Amount}₴.",
+                "decline": "Вам предложили поучаствовать в клининге квартир за {Amount}₴, но вы отказались.",
+                "missing": "Шел набор в команду клининга квартир (оплата 20₴). К сожалению, вы не смогли попасть на работу."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} поработал в клининговой компании и получил за уборку {Amount}₴.",
+                "decline": "Игрок {Player} решил не заниматься клинингом квартир.",
+                "missing": "Игроку {Player} предложили подзаработать на уборке квартир, но подработка сорвалась."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 23,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 130,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Велосипед",
+            "requiredAsset": "Велосипед",
+            "requiredSkill": null,
+            "title": "ВЕЛОСИПЕД",
+            "descriptionSelf": "Объявление: Выкупаем велосипеды. Вы можете продать велосипед и получить 130₴.",
+            "descriptionOthers": "Объявление: Выкупаем велосипеды. {Player} может продать велосипед и получить 130₴.",
+            "playerMessages": {
+                "success": "Вы выгодно продали свой велосипед через службу выкупа за {Amount}₴.",
+                "decline": "Вы решили, что велосипед вам еще пригодится, и не стали его продавать.",
+                "missing": "По объявлению выкупают велосипеды (130₴), но у вас его нет в активах."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал через выкуп свой велосипед и получил {Amount}₴.",
+                "decline": "Игрок {Player} передумал продавать свой велосипед скупщикам.",
+                "missing": "Служба выкупа интересовалась велосипедом игрока {Player}, но у него его нет."
+            },
+            "amountChange": 130
+        },
+        {
+            "nr": 24,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 10,
+            "businessName": null,
+            "skillName": "SMM",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "smm",
+            "title": "НУЖЕН SMMЩИК",
+            "descriptionSelf": "Компания набирает SMMщиков. Вы поработали и получили 10₴.",
+            "descriptionOthers": "Компания набирает SMMщиков. {Player} может поработать и получить 10₴.",
+            "playerMessages": {
+                "success": "Вы поработали SMM-специалистом в компании и получили гонорар {Amount}₴.",
+                "decline": "Вы решили не брать на себя обязанности SMM-щика за {Amount}₴.",
+                "missing": "Для работы в компании SMM-специалистом (10₴) вам требуется соответствующий навык."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} попробовал себя в роли SMM-щика и заработал свои первые {Amount}₴ в этой сфере.",
+                "decline": "Игрок {Player} отклонил предложение поработать SMM-специалистом.",
+                "missing": "Игроку {Player} предложили заняться SMM, но у него нет этого навыка."
+            },
+            "amountChange": 10
+        },
+        {
+            "nr": 25,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 20,
+            "businessName": null,
+            "skillName": "SMM",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "smm",
+            "title": "НУЖЕН SMMЩИК",
+            "descriptionSelf": "Компания набирает SMMщиков. Вы поработали и получили 20₴.",
+            "descriptionOthers": "Компания набирает SMMщиков. {Player} может поработать и получить 20₴.",
+            "playerMessages": {
+                "success": "Вы успешно реализовали SMM-стратегию для компании и за работу получили {Amount}₴.",
+                "decline": "Компания искала SMM-специалиста, но вы решили не соглашаться на эту подработку.",
+                "missing": "Вакансия SMM-специалиста (20₴) требует наличия навыка SMM, которого у вас нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выполнил SMM-задачи для компании и пополнил свой бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} решил не связываться с работой SMM-щика.",
+                "missing": "Игроку {Player} предложили подработать SMM-специалистом, но у него нет этого навыка."
+            },
+            "amountChange": 20
+        },
+        {
+            "nr": 26,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 50,
+            "businessName": null,
+            "skillName": "Дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "designer",
+            "title": "ГРАВИРОВКА",
+            "descriptionSelf": "Требуются услуги гравировки. Вы выполнили заказ и получили 50₴.",
+            "descriptionOthers": "Требуются услуги гравировки. {Player} может выполнил заказ и получить 50₴.",
+            "playerMessages": {
+                "success": "Вы выполнили сложную гравировку для заказчика и выручили за работу {Amount}₴.",
+                "decline": "Вам предложили заказ на услуги гравировки за {Amount}₴, но вы отказались.",
+                "missing": "Заказчику требуется мастер гравировки (50₴). К сожалению, у вас нет навыка дизайнера."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил талант в искусстве гравировки и заработал честные {Amount}₴.",
+                "decline": "Игрок {Player} не стал браться за заказ по гравировке.",
+                "missing": "Игроку {Player} предложили сделать гравировку за деньги, но у него нет навыка дизайнера."
+            },
+            "amountChange": 50
+        },
+        {
+            "nr": 27,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 40,
+            "businessName": null,
+            "skillName": "Дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "designer",
+            "title": "ГРАВИРОВКА",
+            "descriptionSelf": "Требуются услуги гравировки. Вы выполнили заказ и получили 40₴.",
+            "descriptionOthers": "Требуются услуги гравировки. {Player} может выполнил заказ и получить 40₴.",
+            "playerMessages": {
+                "success": "Заказ на гравировку успешно выполнен! Вы получили оплату в размере {Amount}₴.",
+                "decline": "Вы решили не заниматься гравировкой по этому заказу за {Amount}₴.",
+                "missing": "Для выполнения услуг гравировки (40₴) вам необходим навык дизайнера."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} выполнил гравировку для клиента и пополнил свой бюджет на {Amount}₴.",
+                "decline": "Игрок {Player} отклонил предложение выполнить услуги по гравировке.",
+                "missing": "Клиенту требовалась гравировка, но у игрока {Player} нет нужной квалификации."
+            },
+            "amountChange": 40
+        },
+        {
+            "nr": 28,
+            "hasButtons": false,
+            "type": "income",
+            "subtype": "offer",
+            "price": 0,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 30,
+            "businessName": null,
+            "skillName": "Дизайн",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": "designer",
+            "title": "ГРАВИРОВКА",
+            "descriptionSelf": "Требуются услуги гравировки. Вы выполнили заказ и получили 30₴.",
+            "descriptionOthers": "Требуются услуги гравировки. {Player} может выполнил заказ и получить 30₴.",
+            "playerMessages": {
+                "success": "Вы успешно завершили мелкий заказ по гравировке и получили {Amount}₴.",
+                "decline": "Вы решили не брать мелкий заказ на гравировку за {Amount}₴.",
+                "missing": "Требуются услуги гравировки (30₴). К сожалению, у вас нет нужного навыка дизайнера."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} подработал, выполнив заказ на гравировку, и получил {Amount}₴.",
+                "decline": "Игрок {Player} отказался от небольшого заказа по гравировке.",
+                "missing": "Игроку {Player} предложили подзаработать на гравировке, но мастерства не хватило."
+            },
+            "amountChange": 30
+        },
+        {
+            "nr": 29,
+            "hasButtons": true,
+            "type": "asset",
+            "subtype": "demand",
+            "price": 130,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Телефон",
+            "requiredAsset": "Телефон",
+            "requiredSkill": null,
+            "title": "ТЕЛЕФОН",
+            "descriptionSelf": "Объявление: Один человек скупает телефоны. Вы можете продать телефон и получить 130₴.",
+            "descriptionOthers": "Объявление: Один человек скупает телефоны. {Player} может продать телефон и получить 130₴.",
+            "playerMessages": {
+                "success": "Сделка завершена! Вы продали свой старый телефон скупщику за {Amount}₴.",
+                "decline": "Вы решили не продавать телефон скупщику по этой цене.",
+                "missing": "Скупщик интересуется телефонами (130₴), но у вас нет подходящего устройства."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} продал свой мобильный телефон скупщику и выручил {Amount}₴.",
+                "decline": "Игрок {Player} отказался от предложения продать телефон.",
+                "missing": "Скупщик хотел купить телефон у игрока {Player}, но продавать тому нечего."
+            },
+            "amountChange": 130
+        }
+    ]
+}

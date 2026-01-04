@@ -1,0 +1,1152 @@
+{
+    "cards": [
+        {
+            "nr": 1,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Аттракцион",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "АТТРАКЦИОН",
+            "descriptionSelf": "Ты покатался на аттракционах и потратил 10₴.",
+            "descriptionOthers": "Игрок {Player} покатался на аттракционах и потратил 10₴.",
+            "playerMessages": {
+                "success": "Вы отлично провели время на аттракционах, потратив на это удовольствие {Amount}₴.",
+                "decline": "Вы решили воздержаться от похода на аттракционы сегодня.",
+                "missing": "Вы хотели покататься на аттракционах (10₴), но в вашем кошельке оказалось пусто."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} не устоял перед соблазном и потратил {Amount}₴ на аттракционы.",
+                "decline": "Игрок {Player} прошел мимо аттракционов, сохранив свои сбережения.",
+                "missing": "Игрок {Player} хотел бы покататься на аттракционах, но у него не хватило на это денег."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 2,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 7,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Кинотеатр",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "АТТРАКЦИОН",
+            "descriptionSelf": "Вы с друзьями решили сходить в кинотеатр. Потратили 7₴.",
+            "descriptionOthers": "Игрок {Player} сходил в кинотеатр за 7₴.",
+            "playerMessages": {
+                "success": "Поход в кинотеатр с друзьями удался! Вы потратили на билет {Amount}₴.",
+                "decline": "Вы отказались от предложения сходить в кино и сэкономили деньги.",
+                "missing": "Вы планировали сходить в кинотеатр (7₴), но средств на покупку билета не нашлось."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} сходил в кино в приятной компании, потратив на это {Amount}₴.",
+                "decline": "Игрок {Player} решил не тратить деньги на кинотеатр и остался дома.",
+                "missing": "Игрок {Player} не смог присоединиться к друзьям в кино, так как у него закончились деньги."
+            },
+            "amountChange": -7
+        },
+        {
+            "nr": 3,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 12,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Лейка",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЛЕЙКА",
+            "descriptionSelf": "Поливая цветы, ты уронил лейку с водой и разбил её. Новая лейка стоит 12₴.",
+            "descriptionOthers": "Игрок {Player} купил новую лейку за 12₴.",
+            "playerMessages": {
+                "success": "Разбитая лейка — не беда, вы купили новую за {Amount}₴, чтобы цветы не завяли.",
+                "decline": "Вы решили пока не покупать новую лейку взамен разбитой.",
+                "missing": "Нужно купить новую лейку (12₴) взамен разбитой, но у вас нет необходимой суммы."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} пополнил свой садовый инвентарь новой лейкой, потратив {Amount}₴.",
+                "decline": "Игрок {Player} решил обойтись без лейки, несмотря на досадную поломку.",
+                "missing": "Игрок {Player} разбил старую лейку, а на покупку новой у него не хватило финансов."
+            },
+            "amountChange": -12
+        },
+        {
+            "nr": 4,
+            "hasButtons": true,
+            "type": "skill",
+            "subtype": "offer",
+            "price": 70,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": "Немецкий язык",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КУРСЫ",
+            "descriptionSelf": "Предлагаем пройти курсы немецкого языка. Вы научитесь переводить документы. Стоимость: 70₴.",
+            "descriptionOthers": "Игрок {Player} получил предложение пройти курсы немецкого языка за 70₴.",
+            "playerMessages": {
+                "success": "Поздравляем! Вы прошли курсы немецкого языка за {Amount}₴ и теперь понимаете документы.",
+                "decline": "Вы решили, что сейчас не лучшее время для изучения немецкого языка.",
+                "missing": "Курсы немецкого языка стоят {Amount}₴, но ваш бюджет не позволяет такую трату."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} теперь владеет немецким языком после успешного окончания курсов.",
+                "decline": "Игрок {Player} проигнорировал возможность выучить немецкий язык.",
+                "missing": "Игрок {Player} хотел бы освоить немецкий, но курсы оказались ему не по карману."
+            },
+            "amountChange": -70
+        },
+        {
+            "nr": 5,
+            "hasButtons": true,
+            "type": "skill",
+            "subtype": "offer",
+            "price": 70,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": "Французский язык",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КУРСЫ",
+            "descriptionSelf": "Предлагаем пройти курсы французского языка. Вы научитесь переводить документы. Стоимость: 70₴.",
+            "descriptionOthers": "Игрок {Player} получил предложение пройти курсы французского языка за 70₴.",
+            "playerMessages": {
+                "success": "Великолепно! Вы освоили французский язык на курсах за {Amount}₴.",
+                "decline": "Изучение французского языка пока не входит в ваши приоритеты.",
+                "missing": "Обучение французскому языку стоит {Amount}₴, но у вас недостаточно средств."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} успешно прошел обучение французскому языку и готов к новым свершениям.",
+                "decline": "Игрок {Player} отказался от предложения выучить французский язык.",
+                "missing": "Игрок {Player} не смог записаться на курсы французского из-за нехватки денег."
+            },
+            "amountChange": -70
+        },
+        {
+            "nr": 6,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 8,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Компьютерная игра",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КОМПЬЮТЕРНАЯ ИГРА",
+            "descriptionSelf": "Вы зашли в магазин компьютерной техники, и купили новую компьютерную игру за 8₴.",
+            "descriptionOthers": "Игрок {Player} купил компьютерную игра за 8₴.",
+            "playerMessages": {
+                "success": "Новинка в коллекции! Вы приобрели компьютерную игру, потратив {Amount}₴.",
+                "decline": "Вы решили не тратить деньги на новую компьютерную игру.",
+                "missing": "Вы хотели купить новую игру (8₴), но ваш баланс оказался слишком мал."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} поддался игровому азарту и купил компьютерную игру за {Amount}₴.",
+                "decline": "Игрок {Player} сохранил хладнокровие и прошел мимо магазина игр.",
+                "missing": "Игрок {Player} заглядывался на новую игру, но не смог себе её позволить."
+            },
+            "amountChange": -8
+        },
+        {
+            "nr": 7,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 4,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Фастфуд",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ФАСТФУД",
+            "descriptionSelf": "После уроков вам захотелось покушать фастфуд. Вы потратили 4₴.",
+            "descriptionOthers": "Игрок {Player} купил фастфуд за 4₴.",
+            "playerMessages": {
+                "success": "Быстрый перекус пошел на пользу! Вы потратили на фастфуд {Amount}₴.",
+                "decline": "Вы решили поддержать здоровое питание и отказались от фастфуда.",
+                "missing": "Захотелось фастфуда (4₴), но даже на такой скромный обед у вас не хватило денег."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} решил подкрепиться фастфудом и заплатил за это {Amount}₴.",
+                "decline": "Игрок {Player} не стал тратиться на фастфуд в этот раз.",
+                "missing": "Игрок {Player} остался голодным, так как на фастфуд у него не было средств."
+            },
+            "amountChange": -4
+        },
+        {
+            "nr": 8,
+            "hasButtons": true,
+            "type": "skill",
+            "subtype": "offer",
+            "price": 70,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": "Китайский язык",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КУРСЫ",
+            "descriptionSelf": "Предлагаем пройти курсы китайского языка. Вы научитесь переводить документы. Стоимость: 70₴.",
+            "descriptionOthers": "Игрок {Player} получил предложение пройти курсы китайского языка за 70₴.",
+            "playerMessages": {
+                "success": "Нихао! Курсы китайского языка успешно пройдены за {Amount}₴.",
+                "decline": "Китайская грамота подождет — вы отказались от обучения.",
+                "missing": "Курсы китайского языка стоят {Amount}₴, и сейчас это непосильная сумма для вас."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} теперь может переводить с китайского после завершения курсов.",
+                "decline": "Игрок {Player} решил не связываться с изучением китайского языка.",
+                "missing": "Игрок {Player} упустил шанс выучить китайский из-за пустых карманов."
+            },
+            "amountChange": -70
+        },
+        {
+            "nr": 9,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 4,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Мороженое",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "МОРОЖЕНОЕ",
+            "descriptionSelf": "В парке с друзьями вам захотелось мороженое. У друзей денег не было и вам пришлось заплатить 4₴.",
+            "descriptionOthers": "Игрок {Player} заплатил за мороженое 4₴.",
+            "playerMessages": {
+                "success": "Вы угостили друзей мороженым, потратив на это доброе дело {Amount}₴.",
+                "decline": "Вы решили не покупать мороженое в этот раз.",
+                "missing": "Мороженое для компании стоит 4₴, но у вас не нашлось даже такой мелочи."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил щедрость и купил друзьям мороженое за {Amount}₴.",
+                "decline": "Игрок {Player} не стал покупать мороженое себе и друзьям.",
+                "missing": "Игрок {Player} хотел угостить всех мороженым, но финансы запели романсы."
+            },
+            "amountChange": -4
+        },
+        {
+            "nr": 10,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 8,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Кинотеатр",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КИНОТЕАТР",
+            "descriptionSelf": "Вы с друзьями решили сходить в кинотеатр. Потратили 8₴.",
+            "descriptionOthers": "Игрок {Player} сходил в кинотеатр за 8₴.",
+            "playerMessages": {
+                "success": "Сеанс кино прошел отлично! Ваши затраты на билеты составили {Amount}₴.",
+                "decline": "Вы передумали идти в кинотеатр и сохранили деньги.",
+                "missing": "Поход в кино (8₴) отменяется из-за отсутствия денег в вашем бюджете."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} посетил кинотеатр в компании друзей, потратив {Amount}₴.",
+                "decline": "Игрок {Player} отказался от похода в кино и потратил время на что-то другое.",
+                "missing": "Игрок {Player} не смог пойти в кино с друзьями, так как у него нет денег."
+            },
+            "amountChange": -8
+        },
+        {
+            "nr": 11,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Химчистка",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ХИМЧИСТКА",
+            "descriptionSelf": "Играя в футбол, ты упал на газон и испачкал белую футболку. Химчистка стоит 10₴.",
+            "descriptionOthers": "Игрок {Player} воспользовался химчисткой за 10₴.",
+            "playerMessages": {
+                "success": "Белая футболка снова как новая! Химчистка обошлась вам в {Amount}₴.",
+                "decline": "Вы решили попробовать отстирать футболку самостоятельно.",
+                "missing": "Химчистка стоит 10₴, но у вас недостаточно средств, чтобы привести вещи в порядок."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} воспользовался услугами химчистки за {Amount}₴ после падения на поле.",
+                "decline": "Игрок {Player} решил не тратиться на химчистку испачканной одежды.",
+                "missing": "Игроку {Player} нужно почистить вещи в химчистке, но его кошелек пуст."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 12,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 7,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Аксессуары",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "АКСЕССУАРЫ",
+            "descriptionSelf": "В магазине аксессуаров вам понравилась одна вещица, которая стоила 7₴.",
+            "descriptionOthers": "Игрок {Player} купил аксессуар за 7₴.",
+            "playerMessages": {
+                "success": "Стильный аксессуар теперь ваш! Вы заплатили за него в магазине {Amount}₴.",
+                "decline": "Вы решили, что эта вещица вам не очень нужна, и отказались от покупки.",
+                "missing": "Аксессуар стоит 7₴, но у вас нет даже такой небольшой суммы на покупки."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} приобрел симпатичный аксессуар, потратив на него {Amount}₴.",
+                "decline": "Игрок {Player} проявил бережливость и не стал покупать аксессуар.",
+                "missing": "Игроку {Player} понравилась вещь в магазине, но денег на неё не хватило."
+            },
+            "amountChange": -7
+        },
+        {
+            "nr": 13,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Наушники",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "НАУШНИКИ",
+            "descriptionSelf": "Из-за небрежного отношения у вас испортились наушники, новые стоят 5₴.",
+            "descriptionOthers": "Игрок {Player} купил новые наушники за 5₴.",
+            "playerMessages": {
+                "success": "Музыка снова с вами! Вы купили новые наушники взамен сломанных за {Amount}₴.",
+                "decline": "Вы решили пока обойтись без наушников.",
+                "missing": "Новые наушники стоят 5₴, но у вас не хватает денег на их приобретение."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} купил новые наушники, так как старые пришли в негодность. Затраты: {Amount}₴.",
+                "decline": "Игрок {Player} решил не покупать наушники в данный момент.",
+                "missing": "Игрок {Player} остался без музыки, так как у него нет 5₴ на покупку наушников."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 14,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Развлекательный центр",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "РАЗВЛЕКАТЕЛЬНЫЙ ЦЕНТР",
+            "descriptionSelf": "Вы с друзьями решили пойти в развлекательный центр, вход стоит 10₴.",
+            "descriptionOthers": "Игрок {Player} посетил развлекательный центр за 10₴.",
+            "playerMessages": {
+                "success": "День развлечений в самом разгаре! За вход в центр вы заплатили {Amount}₴.",
+                "decline": "Вы отказались от похода в развлекательный центр.",
+                "missing": "Вход в развлекательный центр стоит 10₴, но ваш бюджет не позволяет этого."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} решил повеселиться и потратил {Amount}₴ в развлекательном центре.",
+                "decline": "Игрок {Player} не стал тратить деньги на развлекательный центр.",
+                "missing": "Игрок {Player} хотел пойти в развлекательный центр, но у него закончились деньги."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 15,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 4,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Вкусняшки",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ВКУСНЯШКИ",
+            "descriptionSelf": "Проходя мимо магазина, вам захотелось вкусненького. Заплатите 4₴.",
+            "descriptionOthers": "Игрок {Player} купил вкусняшки за 4₴.",
+            "playerMessages": {
+                "success": "Немного сладкого для настроения! Вы купили вкусняшки за {Amount}₴.",
+                "decline": "Вы решили воздержаться от покупки сладостей сегодня.",
+                "missing": "На вкусняшки нужно всего 4₴, но даже этой суммы у вас не оказалось."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} порадовал себя покупкой вкусняшек на сумму {Amount}₴.",
+                "decline": "Игрок {Player} прошел мимо витрины со сладостями.",
+                "missing": "Игрок {Player} хотел купить что-нибудь вкусненькое, но не смог себе это позволить."
+            },
+            "amountChange": -4
+        },
+        {
+            "nr": 16,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 4,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Браслет",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "БРАСЛЕТ",
+            "descriptionSelf": "В интернет-магазине вам понравился один модный браслет, который стоит 4₴.",
+            "descriptionOthers": "Игрок {Player} купил браслет за 4₴.",
+            "playerMessages": {
+                "success": "Модный браслет теперь украшает вашу руку! Вы заплатили {Amount}₴.",
+                "decline": "Вы решили не совершать покупку браслета в интернет-магазине.",
+                "missing": "Браслет стоит 4₴, но на вашем счету недостаточно средств для покупки."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} заказал модный браслет через интернет за {Amount}₴.",
+                "decline": "Игрок {Player} отказался от покупки браслета онлайн.",
+                "missing": "Игрок {Player} хотел купить модный браслет, но средств не хватило."
+            },
+            "amountChange": -4
+        },
+        {
+            "nr": 17,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 3,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "День рождения одноклассника",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ДЕНЬ РОЖДЕНИЕ ОДНОКЛАССНИКА",
+            "descriptionSelf": "Сегодня день рождения у вашего одноклассника, все собирают на подарок по 3₴.",
+            "descriptionOthers": "Игрок {Player} скинулся на подарок однокласснику 3₴.",
+            "playerMessages": {
+                "success": "Вы поддержали традицию и сдали {Amount}₴ на подарок однокласснику.",
+                "decline": "Вы решили не участвовать в сборе средств на подарок.",
+                "missing": "На подарок однокласснику собирают по 3₴, но у вас нет даже такой суммы."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} внес свой вклад в подарок для одноклассника в размере {Amount}₴.",
+                "decline": "Игрок {Player} отказался сдавать деньги на подарок однокласснику.",
+                "missing": "Игрок {Player} не смог скинуться на подарок, так как у него нет денег."
+            },
+            "amountChange": -3
+        },
+        {
+            "nr": 18,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Компьютерная игра",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КОМПЬЮТЕРНАЯ ИГРА",
+            "descriptionSelf": "Вы зашли в магазин компьютерной техники, и купили новую компьютерную игру за 10₴.",
+            "descriptionOthers": "Игрок {Player} купил компьютерную игру за 10₴.",
+            "playerMessages": {
+                "success": "Новая игра в коллекцию! Вы приобрели компьютерную игру за {Amount}₴.",
+                "decline": "Вы решили воздержаться от покупки новой игры сегодня.",
+                "missing": "Вы хотели купить игру за 10₴, но ваш баланс не позволяет такую покупку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} купил новую компьютерную игру, потратив на это {Amount}₴.",
+                "decline": "Игрок {Player} решил сэкономить и не покупать игру.",
+                "missing": "Игрок {Player} хотел бы купить игру, но сейчас у него финансовые трудности."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 19,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 3,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Компьютерный клуб",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КОМПЬЮТЕРНЫЙ КЛУБ",
+            "descriptionSelf": "После школы вам захотелось немного поиграть за компьютером, вы потратили 3₴.",
+            "descriptionOthers": "Игрок {Player} потратил 3₴ в компьютерном клубе.",
+            "playerMessages": {
+                "success": "Время пролетело незаметно! Вы потратили {Amount}₴ в компьютерном клубе.",
+                "decline": "Вы решили не заходить в компьютерный клуб сегодня.",
+                "missing": "Час игры в клубе стоит 3₴, но у вас нет денег даже на это."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} отлично провел время в компьютерном клубе, заплатив за это {Amount}₴.",
+                "decline": "Игрок {Player} прошел мимо компьютерного клуба.",
+                "missing": "Игрок {Player} хотел поиграть в клубе, но у него пустой кошелек."
+            },
+            "amountChange": -3
+        },
+        {
+            "nr": 20,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 15,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Брюки",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "БРЮКИ",
+            "descriptionSelf": "Ты пытался прокатиться и нечаянно порвал новые брюки. Новые стоят 15₴.",
+            "descriptionOthers": "Игрок {Player} порвал и купил новые брюки за 15₴.",
+            "playerMessages": {
+                "success": "Неприятность с брюками исправлена! Вы купили новые за {Amount}₴.",
+                "decline": "Вы решили пока не покупать новые брюки.",
+                "missing": "Вам нужны новые брюки (15₴) взамен порванных, но денег на покупку нет."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} порвал брюки и был вынужден купить новые за {Amount}₴.",
+                "decline": "Игрок {Player} решил обойтись без новых брюк, несмотря на дырку на старых.",
+                "missing": "Игроку {Player} срочно нужны брюки, но его финансы не позволяют их купить."
+            },
+            "amountChange": -15
+        },
+        {
+            "nr": 21,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Пенал",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПЕНАЛ",
+            "descriptionSelf": "В общественном транспорте ты потерял пенал с ручками и карандашами. Новый пенал стоит 5₴.",
+            "descriptionOthers": "Игрок {Player} купил новый пенал за 5₴.",
+            "playerMessages": {
+                "success": "Учеба продолжается! Вы купили новый пенал с канцелярией за {Amount}₴.",
+                "decline": "Вы решили пока не покупать новый пенал.",
+                "missing": "Новый пенал стоит 5₴, но у вас нет средств на его приобретение."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} потерял старый пенал и приобрел новый за {Amount}₴.",
+                "decline": "Игрок {Player} решил не покупать новый пенал взамен потерянного.",
+                "missing": "Игрок {Player} остался без пенала, так как у него нет денег на покупку нового."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 22,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 2,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Пожертвование",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОЖЕРТВОВАНИЕ",
+            "descriptionSelf": "Вы увидели бездомного человека, и захотели ему помочь. Дать ему 2₴?",
+            "descriptionOthers": "Игрок {Player} сделал пожертвование 2₴.",
+            "playerMessages": {
+                "success": "Ваше доброе дело принесло радость! Вы сделали пожертвование {Amount}₴.",
+                "decline": "Вы решили не помогать бездомному человеку в этот раз.",
+                "missing": "Вы хотели помочь бездомному (2₴), но ваш кошелек оказался совсем пуст."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил сострадание и пожертвовал {Amount}₴ нуждающемуся.",
+                "decline": "Игрок {Player} не стал делать пожертвование.",
+                "missing": "Игрок {Player} хотел бы помочь, но у него у самого нет денег."
+            },
+            "amountChange": -2
+        },
+        {
+            "nr": 23,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 4,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Канцелярия",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КАНЦЕЛЯРСКИЕ ТОВАРЫ",
+            "descriptionSelf": "Вам срочно нужны некоторые канцелярские принадлежности на сумму 4₴.",
+            "descriptionOthers": "Игрок {Player} купил канцелярские принадлежности на сумму 4₴.",
+            "playerMessages": {
+                "success": "Арсенал для учебы пополнен! Вы купили канцелярию на {Amount}₴.",
+                "decline": "Вы решили отложить покупку канцелярских товаров.",
+                "missing": "Вам нужна канцелярия на сумму 4₴, но ваш бюджет не позволяет такую трату."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} приобрел необходимые канцелярские принадлежности за {Amount}₴.",
+                "decline": "Игрок {Player} прошел мимо отдела канцтоваров.",
+                "missing": "Игрок {Player} нуждается в канцелярии, но денег на неё не нашлось."
+            },
+            "amountChange": -4
+        },
+        {
+            "nr": 24,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Зоопарк",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЗООПАРК",
+            "descriptionSelf": "После занятий вы с друзьями пошли в зоопарк, потратили там 5₴.",
+            "descriptionOthers": "Игрок {Player} посетил зоопарк за 5₴.",
+            "playerMessages": {
+                "success": "Незабываемая прогулка по зоопарку! Вы потратили на билеты {Amount}₴.",
+                "decline": "Вы отказались от предложения сходить в зоопарк с друзьями.",
+                "missing": "Поход в зоопарк стоит 5₴, и сейчас это слишком дорого для вас."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} посетил зоопарк в компании друзей, потратив {Amount}₴.",
+                "decline": "Игрок {Player} не захотел идти в зоопарк.",
+                "missing": "Игрок {Player} хотел бы посмотреть на животных, но денег нет."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 25,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Развлекательный центр",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "РАЗВЛЕКАТЕЛЬНЫЙ ЦЕНТР",
+            "descriptionSelf": "Вы с друзьями решили пойти в развлекательный центр, вход стоит 5₴.",
+            "descriptionOthers": "Игрок {Player} посетил развлекательный центр за 5₴.",
+            "playerMessages": {
+                "success": "Вы отлично провели время в развлекательном центре, заплатив за вход {Amount}₴.",
+                "decline": "Вы решили не тратить деньги на развлекательный центр.",
+                "missing": "Вход в развлекательный центр стоит 5₴, но ваш кошелек пуст."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} посетил развлекательный центр с друзьями за {Amount}₴.",
+                "decline": "Игрок {Player} отказался от похода в развлекательный центр.",
+                "missing": "Игрок {Player} остался без развлечений из-за отсутствия средств."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 26,
+            "hasButtons": true,
+            "type": "charity",
+            "subtype": "offer",
+            "price": 3,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Пожертвование",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОЖЕРТВОВАНИЕ",
+            "descriptionSelf": "Вы увидели бездомного человека, и захотели ему помочь. Дать ему 3₴?",
+            "descriptionOthers": "Игрок {Player} может сделать пожертвование 3₴.",
+            "playerMessages": {
+                "success": "Доброта спасет мир! Вы сделали пожертвование в размере {Amount}₴.",
+                "decline": "Вы решили не давать денег бездомному человеку.",
+                "missing": "Вы хотели бы помочь человеку (3₴), но у вас совсем нет денег."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} пожертвовал {Amount}₴ бездомному, совершив благородный поступок.",
+                "decline": "Игрок {Player} не стал участвовать в благотворительности.",
+                "missing": "Игрок {Player} проявил желание помочь, но у него нет на это средств."
+            },
+            "amountChange": -3
+        },
+        {
+            "nr": 27,
+            "hasButtons": true,
+            "type": "skill",
+            "subtype": "offer",
+            "price": 60,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": "Английский язык",
+            "assetName": null,
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КУРСЫ",
+            "descriptionSelf": "Предлагаем пройти курсы английского языка. Вы научитесь переводить документы. Стоимость: 60₴.",
+            "descriptionOthers": "Игрок {Player} получил предложение пройти курсы английского языка за 60₴.",
+            "playerMessages": {
+                "success": "Ваш уровень английского растет! Вы оплатили курсы в размере {Amount}₴.",
+                "decline": "Вы решили отложить изучение английского языка до лучших времен.",
+                "missing": "Курсы английского стоят {Amount}₴, и ваш бюджет сейчас не позволяет такую трату."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} теперь знает английский язык после успешного завершения курсов.",
+                "decline": "Игрок {Player} не захотел учить английский язык.",
+                "missing": "Игрок {Player} упустил возможность учить английский из-за нехватки денег."
+            },
+            "amountChange": -60
+        },
+        {
+            "nr": 28,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 3,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Канцелярия",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КАНЦЕЛЯРСКИЕ ТОВАРЫ",
+            "descriptionSelf": "Вам срочно нужны некоторые канцелярские принадлежности на сумму 3₴.",
+            "descriptionOthers": "Игрок {Player} купил канцелярские принадлежности на сумму 3₴.",
+            "playerMessages": {
+                "success": "Теперь вы полностью готовы к занятиям! Канцелярия куплена за {Amount}₴.",
+                "decline": "Вы решили, что сможете обойтись без новой канцелярии.",
+                "missing": "Для покупки канцелярии нужно 3₴, но ваш баланс слишком мал."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} приобрел канцелярские товары на сумму {Amount}₴.",
+                "decline": "Игрок {Player} отказался от покупки новой канцелярии.",
+                "missing": "Игроку {Player} нужна канцелярия для учебы, но денег на неё не нашлось."
+            },
+            "amountChange": -3
+        },
+        {
+            "nr": 29,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Мяч",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "МЯЧ",
+            "descriptionSelf": "Играя во дворе, вы случайно испортили мяч соседа, вам придётся возместить ущерб. Заплатите 10₴.",
+            "descriptionOthers": "Игрок {Player} возместил ущерб за мяч соседа 10₴.",
+            "playerMessages": {
+                "success": "Справедливость восстановлена! Вы возместили ущерб за испорченный мяч соседа ({Amount}₴).",
+                "decline": "Вы решили пока не возмещать ущерб за мяч.",
+                "missing": "Нужно заплатить 10₴ за испорченный мяч соседа, но у вас нет таких денег."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил честность и возместил ущерб за испорченный мяч в размере {Amount}₴.",
+                "decline": "Игрок {Player} не стал платить за мяч соседа.",
+                "missing": "Игроку {Player} нужно возместить ущерб за мяч (10₴), но его кошелек пуст."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 30,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 7,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Игрушка",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ИГРУШКА",
+            "descriptionSelf": "Гуляя по торговому центру вы увидели классную игрушку, которая стоит 7₴.",
+            "descriptionOthers": "Игрок {Player} купил игрушку за 7₴.",
+            "playerMessages": {
+                "success": "Радость от новой игрушки бесценна! Вы потратили на неё {Amount}₴.",
+                "decline": "Вы решили, что игрушка вам не нужна, и сэкономили деньги.",
+                "missing": "Классная игрушка стоит 7₴, но ваш бюджет не позволяет такую покупку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} приобрел новую игрушку за {Amount}₴ в торговом центре.",
+                "decline": "Игрок {Player} прошел мимо магазина игрушек.",
+                "missing": "Игрок {Player} заглядывался на игрушку, но денег на покупку не хватило."
+            },
+            "amountChange": -7
+        },
+        {
+            "nr": 31,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 6,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Зоопарк",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ЗООПАРК",
+            "descriptionSelf": "После занятий вы с друзьями пошли в зоопарк, потратили там 6₴.",
+            "descriptionOthers": "Игрок {Player} посетил зоопарк за 6₴.",
+            "playerMessages": {
+                "success": "Звери были рады вашему визиту! Поход в зоопарк обошелся в {Amount}₴.",
+                "decline": "Вы решили не тратить время и деньги на посещение зоопарка.",
+                "missing": "Вы планировали пойти в зоопарк (6₴), но средств на билеты не нашлось."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} посетил зоопарк вместе с друзьями, потратив {Amount}₴.",
+                "decline": "Игрок {Player} отказался от похода в зоопарк.",
+                "missing": "Игрок {Player} не смог пойти в зоопарк из-за нехватки средств."
+            },
+            "amountChange": -6
+        },
+        {
+            "nr": 32,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 7,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Кинотеатр",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КИНОТЕАТР",
+            "descriptionSelf": "Вы с друзьями решили сходить в кинотеатр. Потратили 7₴.",
+            "descriptionOthers": "Игрок {Player} сходил в кинотеатр за 7₴.",
+            "playerMessages": {
+                "success": "Кино — это всегда хорошая идея! Вы потратили на билет {Amount}₴.",
+                "decline": "Вы решили не идти в кинотеатр сегодня.",
+                "missing": "Билет в кино стоит 7₴, но на вашем счету пусто."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} сходил в кино за {Amount}₴ и отлично провел время.",
+                "decline": "Игрок {Player} прошел мимо кинотеатра.",
+                "missing": "Игрок {Player} хотел посмотреть фильм, но у него закончились деньги."
+            },
+            "amountChange": -7
+        },
+        {
+            "nr": 33,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Пиццерия",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПИЦЦЕРИЯ",
+            "descriptionSelf": "Вы с одноклассниками после уроков решили зайти в пиццерию, вы потратили 5₴.",
+            "descriptionOthers": "Игрок {Player} потратил 5₴ в пиццерии.",
+            "playerMessages": {
+                "success": "Пицца была очень вкусной! Ваши затраты составили {Amount}₴.",
+                "decline": "Вы решили не тратить деньги на пиццерию сегодня.",
+                "missing": "Вы хотели зайти в пиццерию (5₴), но ваш кошелек оказался пуст."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} пообедал в пиццерии с одноклассниками за {Amount}₴.",
+                "decline": "Игрок {Player} отказался от пиццы в этот раз.",
+                "missing": "Игрок {Player} не смог пойти в пиццерию из-за отсутствия денег."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 34,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Игрушка",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ИГРУШКА",
+            "descriptionSelf": "Гуляя по торговому центру вы увидели классную игрушку, которая стоит 5₴.",
+            "descriptionOthers": "Игрок {Player} купил игрушку за 5₴.",
+            "playerMessages": {
+                "success": "Новая игрушка пополнила вашу коллекцию! Затраты: {Amount}₴.",
+                "decline": "Вы решили не покупать игрушку и сохранили деньги.",
+                "missing": "Игрушка мечты стоит 5₴, но у вас нет даже такой суммы."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} купил себе новую игрушку за {Amount}₴.",
+                "decline": "Игрок {Player} воздержался от покупок в магазине игрушек.",
+                "missing": "Игрок {Player} хотел купить игрушку, но финансовое положение не позволило."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 35,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 8,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Долг",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОПОРОСИЛИ В ДОЛГ",
+            "descriptionSelf": "У вашего друга возникли проблемы, он просит вас одолжить немного денег. Одолжите 8₴.",
+            "descriptionOthers": "Игрок {Player} одолжил 8₴.",
+            "playerMessages": {
+                "success": "Вы выручили друга в трудную минуту, одолжив ему {Amount}₴.",
+                "decline": "Вы решили не давать деньги в долг в этот раз.",
+                "missing": "Вы бы рады помочь другу (8₴), но у вас у самих нет денег."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} проявил дружескую поддержку и одолжил другу {Amount}₴.",
+                "decline": "Игрок {Player} отказал другу в просьбе одолжить денег.",
+                "missing": "Игрок {Player} хотел помочь другу, но его кошелек оказался пуст."
+            },
+            "amountChange": -8
+        },
+        {
+            "nr": 36,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 8,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Аксессуары",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "АКСЕССУАРЫ",
+            "descriptionSelf": "В магазине аксессуаров вам понравилась одна вещица, которая стоила 8₴.",
+            "descriptionOthers": "Игрок {Player} купил аксессуар за 8₴.",
+            "playerMessages": {
+                "success": "Вы приобрели стильный аксессуар за {Amount}₴, который вам так понравился.",
+                "decline": "Вы решили воздержаться от покупки аксессуара.",
+                "missing": "Аксессуар стоит 8₴, но ваш баланс не позволяет совершить покупку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} купил понравившуюся вещицу в магазине аксессуаров за {Amount}₴.",
+                "decline": "Игрок {Player} прошел мимо отдела аксессуаров.",
+                "missing": "Игрок {Player} присмотрел аксессуар, но денег на него не хватило."
+            },
+            "amountChange": -8
+        },
+        {
+            "nr": 37,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 2,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Компьютерный клуб",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "КОМПЬЮТЕРНЫЙ КЛУБ",
+            "descriptionSelf": "После школы вам захотелось немного поиграть за компьютером, вы потратили 2₴.",
+            "descriptionOthers": "Игрок {Player} потратил 2₴ в компьютерном клубе.",
+            "playerMessages": {
+                "success": "Вы отлично поиграли в компьютерном клубе всего за {Amount}₴.",
+                "decline": "Вы решили не тратить время на компьютерные игры сегодня.",
+                "missing": "Час в клубе стоит 2₴, но у вас в карманах совсем пусто."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} провел время в компьютерном клубе, заплатив за это {Amount}₴.",
+                "decline": "Игрок {Player} не пошел в компьютерный клуб.",
+                "missing": "Игрок {Player} хотел поиграть, но у него нет даже 2₴."
+            },
+            "amountChange": -2
+        },
+        {
+            "nr": 38,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Долг",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ПОПОРОСИЛИ В ДОЛГ",
+            "descriptionSelf": "У вашего друга возникли проблемы, он просит вас одолжить немного денег. Одолжите 5₴.",
+            "descriptionOthers": "Игрок {Player} одолжил 5₴.",
+            "playerMessages": {
+                "success": "Вы одолжили другу {Amount}₴. Друзья познаются в беде!",
+                "decline": "Вы решили не давать в долг в данный момент.",
+                "missing": "Другу нужно одолжить 5₴, но ваш бюджет оставляет желать лучшего."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} помог другу деньгами, одолжив ему {Amount}₴.",
+                "decline": "Игрок {Player} отказался давать деньги в долг.",
+                "missing": "Игрок {Player} не смог выручить друга, так как сам остался без денег."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 39,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 10,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Телефон",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ТЕЛЕФОН",
+            "descriptionSelf": "Ваш телефон начал зависать, мастер починит его за 10₴.",
+            "descriptionOthers": "Игрок {Player} починил телефон за 10₴.",
+            "playerMessages": {
+                "success": "Телефон снова в строю! Ремонт у мастера обошелся в {Amount}₴.",
+                "decline": "Вы решили пока не чинить телефон у этого мастера.",
+                "missing": "Ремонт телефона стоит 10₴, но у вас недостаточно средств на починку."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} починил свой зависающий телефон у мастера за {Amount}₴.",
+                "decline": "Игрок {Player} решил обойтись без ремонта телефона.",
+                "missing": "У игрока {Player} сломался телефон, а денег на ремонт нет."
+            },
+            "amountChange": -10
+        },
+        {
+            "nr": 40,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "Вкусняшки",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ВКУСНЯШКИ",
+            "descriptionSelf": "Проходя мимо магазина, вам захотелось вкусненького. Заплатите 5₴.",
+            "descriptionOthers": "Игрок {Player} купил вкусняшки за 5₴.",
+            "playerMessages": {
+                "success": "Сладкое удовольствие! Вы купили вкусняшки за {Amount}₴.",
+                "decline": "Вы решили не покупать сладости в этот раз.",
+                "missing": "Вы хотели купить вкусненького (5₴), но ваш кошелек пуст."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} порадовал себя покупкой вкусняшек на сумму {Amount}₴.",
+                "decline": "Игрок {Player} прошел мимо магазина со сладостями.",
+                "missing": "Игрок {Player} присмотрел вкусняшки, но средств на них не хватило."
+            },
+            "amountChange": -5
+        },
+        {
+            "nr": 41,
+            "hasButtons": false,
+            "type": "expense",
+            "subtype": "offer",
+            "price": 5,
+            "monthlyIncome": 0,
+            "oneTimeIncome": 0,
+            "businessName": null,
+            "skillName": null,
+            "assetName": "День рождения одноклассника",
+            "requiredAsset": null,
+            "requiredSkill": null,
+            "title": "ДЕНЬ РОЖДЕНИЕ ОДНОКЛАССНИКА",
+            "descriptionSelf": "Сегодня день рождения у вашего одноклассника, все собирают на подарок по 5₴.",
+            "descriptionOthers": "Игрок {Player} скинулся на подарок однокласснику 5₴.",
+            "playerMessages": {
+                "success": "Вы поучаствовали в сборе на подарок однокласснику ({Amount}₴).",
+                "decline": "Вы решили не сдавать деньги на подарок в этот раз.",
+                "missing": "На подарок однокласнику нужно 5₴, но ваш бюджет не позволяет этого."
+            },
+            "otherPlayerMessages": {
+                "success": "Игрок {Player} внес 5₴ в общую копилку на подарок однокласснику.",
+                "decline": "Игрок {Player} отказался сдавать деньги на подарок.",
+                "missing": "Игрок {Player} не смог скинуться на подарок из-за отсутствия денег."
+            },
+            "amountChange": -5
+        }
+    ]
+}
